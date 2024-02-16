@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*  */
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: #D5E7F3;
+    font-size: 50px;
+}
