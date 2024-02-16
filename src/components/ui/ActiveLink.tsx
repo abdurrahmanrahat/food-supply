@@ -11,7 +11,7 @@ const ActiveLink = ({ to, children }: TActiveLinkProps) => {
     <div>
       <NavLink
         to={to}
-        className={({ isActive }) => (isActive ? "text-[#DAA868]" : "")}
+        className={({ isActive }) => (isActive ? "text-[#CB8830]" : "")}
       >
         {children}
       </NavLink>
