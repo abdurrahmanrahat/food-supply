@@ -15,7 +15,7 @@ const Navbar = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1.6 }}
     >
-      <header className="w-full max-w-[1230px] px-[12px] md:px-[20px] mx-auto py-[16px] 2xl:py-[18px]">
+      <header className="w-full max-w-[1260px] px-[12px] md:px-[20px] mx-auto py-[16px] 2xl:py-[18px]">
         <nav className=" flex justify-between items-center">
           {/* logo */}
           <Link to="/">
