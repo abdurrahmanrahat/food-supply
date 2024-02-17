@@ -48,7 +48,7 @@ const Discover = () => {
       </Container>
 
       {/* for mobile */}
-      <Container className="md:flex justify-between gap-6 my-16 md:my-24 md:hidden">
+      <Container className="justify-between gap-6 my-16 md:my-24 md:hidden">
         <div className="md:w-1/2 flex flex-col justify-center">
           <h4 className="text-[#D9A868] text-[30px] satisfy-regular">
             Discover
