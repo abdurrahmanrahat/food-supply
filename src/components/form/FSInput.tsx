@@ -12,7 +12,7 @@ const FSInput = ({ type, name, label }: TInputProps) => {
     <div className="md:text-[16px] mb-5">
       {label ? label : null}
       <Controller
-        name={name}
+        name={name} // register by controller
         render={({ field }) => (
           <Input className="text-[17px]" {...field} type={type} id={name} />
         )}
