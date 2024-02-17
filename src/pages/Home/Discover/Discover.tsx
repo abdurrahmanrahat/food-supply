@@ -6,6 +6,7 @@ import Img2 from "../../../assets/images/disc/2.jpg";
 
 const Discover = () => {
   const { styleLeft, styleRight, componentRef } = useScrollX();
+
   return (
     <>
       <Container className="md:flex justify-between gap-6 my-16 md:my-24 hidden">

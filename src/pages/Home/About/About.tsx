@@ -1,13 +1,26 @@
 import Container from "@/components/ui/Container";
+import useScrollX from "@/hooks/scrollXAnimateHook";
+import { motion } from "framer-motion";
 import Img from "../../../assets/images/about.jpg";
 
 const About = () => {
+  const { styleLeft, styleRight, componentRef } = useScrollX();
+
   return (
     <Container className="md:flex gap-20 my-16 md:my-24">
-      <div className="mb-12 md:mb-0">
+      <motion.div
+        style={styleLeft}
+        ref={componentRef}
+        className="mb-12 md:mb-0"
+      >
         <img src={Img} className="rounded-sm" alt="" />
-      </div>
-      <div className="md:w-1/2 flex flex-col justify-center">
+      </motion.div>
+
+      <motion.div
+        style={styleRight}
+        ref={componentRef}
+        className="md:w-1/2 flex flex-col justify-center"
+      >
         <h4 className="text-[#D9A868] text-[30px] satisfy-regular">Discover</h4>
         <h2 className="text-black-text text-[40px] md:text-[44px] font-bold">
           WHAT WE ARE?
@@ -25,7 +38,7 @@ const About = () => {
             Learn More
           </button>
         </div> */}
-      </div>
+      </motion.div>
     </Container>
   );
 };
