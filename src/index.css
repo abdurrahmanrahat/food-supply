@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -81,10 +84,15 @@
 .swiper-button-next::after,
 .swiper-button-prev::after {
   color: #D5E7F3;
-  font-size: 50px;
 }
 
 /* box-shadow */
 .own-shadow {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: italic;
 }

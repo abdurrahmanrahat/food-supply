@@ -52,6 +52,8 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         "primary-text": "#D5E7F3", // light white
+        "black-text": "#333333", // black for text
+        "dark-light": "#999999", // black for text
         "secondary-text": "#FFAB3C", // yellow type
         "primary-bg": "#3D0066", // blue type
       },
