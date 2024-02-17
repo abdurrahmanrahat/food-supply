@@ -26,8 +26,8 @@ const Testimonials = () => {
   return (
     <Container className="my-16 md:my-24">
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-[40px] md:text-[48px] text-black-text font-bold">
-          What client says
+        <h2 className="text-[40px] md:text-[44px] text-black-text font-bold">
+          What Donors Say
         </h2>
 
         <p className="text-dark-light max-w-[56ch] pb-2 text-center">
