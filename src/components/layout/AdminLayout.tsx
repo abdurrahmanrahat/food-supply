@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
@@ -36,7 +37,12 @@ const AdminLayout = () => {
         </div>
 
         {toggle && (
-          <nav className="flex flex-col gap-2 bg-[#3D0066] p-10 absolute top-2 w-full text-primary-text">
+          <motion.nav
+            initial={{ x: -200, scale: 0.7, opacity: 0.6 }}
+            animate={{ x: 0, scale: 1, opacity: 1 }}
+            transition={{ duration: 0.9 }}
+            className="flex flex-col gap-2 bg-[#3D0066] p-8 absolute top-2 w-full text-primary-text"
+          >
             <div className="flex items-center justify-between mb-5">
               <div>
                 <Link onClick={() => setToggle((prev) => !prev)} to="/">
@@ -51,7 +57,10 @@ const AdminLayout = () => {
               </div>
             </div>
 
-            <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <p
+              onClick={() => setToggle((prev) => !prev)}
+              className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+            >
               <ActiveLink to="/admin/dashboard">
                 <div className="flex items-center gap-2">
                   <LuLayoutDashboard className="text-[18px]" />
@@ -60,7 +69,10 @@ const AdminLayout = () => {
               </ActiveLink>
             </p>
 
-            <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <p
+              onClick={() => setToggle((prev) => !prev)}
+              className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+            >
               <ActiveLink to="/admin/create-supply">
                 <div className="flex items-center gap-2">
                   <LuPlusCircle className="text-[18px]" />
@@ -69,7 +81,10 @@ const AdminLayout = () => {
               </ActiveLink>
             </p>
 
-            <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <p
+              onClick={() => setToggle((prev) => !prev)}
+              className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+            >
               <ActiveLink to="/admin/supplies">
                 <div className="flex items-center gap-2">
                   <IoServerOutline className="text-[18px]" />
@@ -78,7 +93,10 @@ const AdminLayout = () => {
               </ActiveLink>
             </p>
 
-            <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <p
+              onClick={() => setToggle((prev) => !prev)}
+              className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+            >
               <ActiveLink to="/">
                 <div className="flex items-center gap-2">
                   <SiHomeadvisor className="text-[18px]" />
@@ -86,7 +104,7 @@ const AdminLayout = () => {
                 </div>
               </ActiveLink>
             </p>
-          </nav>
+          </motion.nav>
         )}
       </div>
       <div className="col-span-10 h-full px-5">
