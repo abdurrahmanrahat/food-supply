@@ -1,22 +1,39 @@
+import AdminLayout from "@/components/layout/AdminLayout";
+import AllSupplies from "@/pages/Admin/AllSupplies/AllSupplies";
+import CreateSupply from "@/pages/Admin/CreateSupply/CreateSupply";
+import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import About from "../pages/About/About";
 import Home from "../pages/Home/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <App />,
     children: [
       {
         index: true,
-        element: <Home></Home>,
+        element: <Home />,
+      },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "/admin/dashboard",
+        element: <Dashboard />,
       },
       {
-        path: "/about",
-        element: <About></About>,
+        path: "/admin/supplies",
+        element: <AllSupplies />,
+      },
+      {
+        path: "/admin/create-supply",
+        element: <CreateSupply />,
       },
     ],
   },
