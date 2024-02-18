@@ -51,6 +51,25 @@ const Banner = () => {
         <SwiperSlide className="relative">
           <img
             className="lg:h-[600px] object-cover w-screen"
+            src="https://i.ibb.co/bgdVbvr/4.jpg"
+          />
+
+          <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10  w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px]  text-white text-center">
+            <h1 className="text-white text-lg md:text-[24px] lg:text-[44px] lg:leading-[44px] font-extrabold">
+              Balancing Surplus and Scarcity
+            </h1>
+            <p className="text-[13px] md:text-[17px] 2xl:text-[18px]">
+              Striking a balance! Our project harmonizes food distribution,
+              minimizing excess in one region and addressing scarcity in
+              another, fostering food equilibrium.
+            </p>
+          </div>
+        </SwiperSlide>
+
+        {/* three */}
+        <SwiperSlide className="relative">
+          <img
+            className="lg:h-[600px] object-cover w-screen"
             src="https://i.ibb.co/4FmpQhy/1.jpg"
           />
 
@@ -66,7 +85,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
 
-        {/* three */}
+        {/* four */}
         <SwiperSlide className="relative">
           <img
             className="lg:h-[600px] object-cover w-screen"
@@ -81,25 +100,6 @@ const Banner = () => {
               Smart solutions for food access! We're creating intelligent supply
               networks to optimize food distribution, making sure it reaches
               every corner that needs it.
-            </p>
-          </div>
-        </SwiperSlide>
-
-        {/* four */}
-        <SwiperSlide className="relative">
-          <img
-            className="lg:h-[600px] object-cover w-screen"
-            src="https://i.ibb.co/bgdVbvr/4.jpg"
-          />
-
-          <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10  w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px]  text-white text-center">
-            <h1 className="text-white text-lg md:text-[24px] lg:text-[44px] lg:leading-[44px] font-extrabold">
-              Balancing Surplus and Scarcity
-            </h1>
-            <p className="text-[13px] md:text-[17px] 2xl:text-[18px]">
-              Striking a balance! Our project harmonizes food distribution,
-              minimizing excess in one region and addressing scarcity in
-              another, fostering food equilibrium.
             </p>
           </div>
         </SwiperSlide>
