@@ -1,3 +1,5 @@
+import { useCurrentUser } from "@/redux/features/auth/authSlice";
+import { useAppSelector } from "@/redux/hooks";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -7,6 +9,8 @@ import ActiveLink from "../ui/ActiveLink";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+
+  const user = useAppSelector(useCurrentUser);
 
   return (
     <motion.div
@@ -35,9 +39,15 @@ const Navbar = () => {
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-              <ActiveLink to="/login">Login</ActiveLink>
-            </li>
+            {user ? (
+              <button className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+                Logout
+              </button>
+            ) : (
+              <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+                <ActiveLink to="/login">Login</ActiveLink>
+              </li>
+            )}
           </ul>
 
           {/* mobile menu */}

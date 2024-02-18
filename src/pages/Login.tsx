@@ -1,14 +1,37 @@
 import FSInput from "@/components/form/FSInput";
 import FormWrap from "@/components/form/FormWrap";
+import { useLoginMutation } from "@/redux/features/auth/authApi";
+import { setUser } from "@/redux/features/auth/authSlice";
+import { useAppDispatch } from "@/redux/hooks";
+import { verifyToken } from "@/utils/verifyToken";
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+// type TUser = {
+//   email: string;
+//   iat: number;
+//   exp: number;
+// };
 
 const Login = () => {
-  // const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
-  const onSubmit = (data: FieldValues) => {
-    console.log(data);
+  const [login, { error }] = useLoginMutation();
+
+  const onSubmit = async (data: FieldValues) => {
+    try {
+      const res = await login(data).unwrap();
+      console.log("res", res);
+      const user = verifyToken(res.token);
+
+      dispatch(setUser({ user, token: res.token }));
+      navigate("/");
+      console.log("user login success");
+    } catch (error) {
+      console.log("error from catch", error);
+    }
   };
 
   return (
