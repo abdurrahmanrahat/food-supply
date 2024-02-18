@@ -1,19 +1,40 @@
 import FSInput from "@/components/form/FSInput";
 import FormWrap from "@/components/form/FormWrap";
+import { useRegisterMutation } from "@/redux/features/auth/authApi";
+import { setUser } from "@/redux/features/auth/authSlice";
+import { useAppDispatch } from "@/redux/hooks";
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const onSubmit = (data: FieldValues) => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const [register, { error }] = useRegisterMutation();
+
+  console.log("error from register", error);
+
+  const onSubmit = async (data: FieldValues) => {
     console.log(data);
+
+    try {
+      const res = await register(data);
+      console.log(res);
+
+      dispatch(setUser({ user: data, token: null }));
+      navigate("/");
+      console.log("user registered");
+    } catch (error) {
+      console.log("error from catch", error);
+    }
   };
 
   return (
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
       <div className="p-10 rounded-md own-shadow">
         <FormWrap onSubmit={onSubmit}>
-          <FSInput type="text" name="username" label="User Name:" />
+          <FSInput type="text" name="name" label="User Name:" />
 
           <FSInput type="text" name="email" label="Email:" />
 
