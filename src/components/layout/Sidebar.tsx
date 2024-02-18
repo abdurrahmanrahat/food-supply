@@ -5,7 +5,7 @@ import ActiveLink from "../ui/ActiveLink";
 
 const Sidebar = () => {
   return (
-    <aside className="bg-[#3D0066] col-span-3 md:col-span-2 h-screen sticky top-0 left-0 overflow-auto p-4 lg:p-5 text-primary-text">
+    <aside className="bg-[#3D0066] h-screen sticky top-0 left-0 overflow-auto p-4 lg:p-5 text-primary-text">
       <nav className="flex flex-col gap-2">
         <h2 className="text-primary-text text-[28px] font-bold">
           Food<span className="text-secondary-text opacity-80">SUP</span>
