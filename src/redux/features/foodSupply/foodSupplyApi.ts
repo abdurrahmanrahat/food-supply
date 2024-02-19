@@ -2,6 +2,12 @@ import { baseApi } from "@/redux/api/baseApi";
 
 const foodSupplyApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
+    getSupply: builder.query({
+      query: () => ({
+        url: "/supplies",
+        method: "GET",
+      }),
+    }),
     addSupply: builder.mutation({
       query: (newSupply) => ({
         url: "/supplies",
@@ -12,4 +18,4 @@ const foodSupplyApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useAddSupplyMutation } = foodSupplyApi;
+export const { useAddSupplyMutation, useGetSupplyQuery } = foodSupplyApi;
