@@ -8,12 +8,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { useGetSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
+import {
+  useGetSupplyQuery,
+  useRemoveSupplyMutation,
+} from "@/redux/features/foodSupply/foodSupplyApi";
 import { LuTrash2 } from "react-icons/lu";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 
 export type TSupply = {
-  _id: string;
+  _id?: string;
   supplyImg: string;
   supplyTitle: string;
   supplyCategory: string;
@@ -22,11 +26,23 @@ export type TSupply = {
 };
 
 const AllSupplies = () => {
+  const [deleteSupply] = useRemoveSupplyMutation();
+
   const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
 
   if (isLoading) {
     return <Loading />;
   }
+
+  // delete supply
+  const handleDeleteSupply = async (id: string | undefined) => {
+    const res = await deleteSupply(id);
+    if (res) {
+      toast.error("Supply deleted successfully", {
+        duration: 500,
+      });
+    }
+  };
 
   return (
     <Container className="my-10 border p-0 rounded-2xl">
@@ -80,7 +96,7 @@ const AllSupplies = () => {
               </TableCell>
               <TableCell className="text-right">
                 <button
-                  // onClick={() => handleDeleteEvent(item._id)}
+                  onClick={() => handleDeleteSupply(item._id)}
                   className="bg-red-500 py-2 px-3 text-lg text-white rounded-md"
                 >
                   <LuTrash2 />

@@ -1,5 +1,5 @@
 import { useAddSupplyMutation } from "@/redux/features/foodSupply/foodSupplyApi";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const img_hosting_token = import.meta.env.VITE_image_uplode_token;
@@ -12,7 +12,7 @@ const CreateSupply = () => {
   // react hook form
   const { register, handleSubmit, reset } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: FieldValues) => {
     const { supplyTitle, supplyCategory, supplyQuantity, supplyDesc } = data;
 
     // img hosting to imgbb

@@ -7,6 +7,7 @@ const foodSupplyApi = baseApi.injectEndpoints({
         url: "/supplies",
         method: "GET",
       }),
+      providesTags: ["supply"],
     }),
     addSupply: builder.mutation({
       query: (newSupply) => ({
@@ -14,8 +15,20 @@ const foodSupplyApi = baseApi.injectEndpoints({
         method: "POST",
         body: newSupply,
       }),
+      invalidatesTags: ["supply"],
+    }),
+    removeSupply: builder.mutation({
+      query: (id) => ({
+        url: `/supplies/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["supply"],
     }),
   }),
 });
 
-export const { useAddSupplyMutation, useGetSupplyQuery } = foodSupplyApi;
+export const {
+  useAddSupplyMutation,
+  useGetSupplyQuery,
+  useRemoveSupplyMutation,
+} = foodSupplyApi;
