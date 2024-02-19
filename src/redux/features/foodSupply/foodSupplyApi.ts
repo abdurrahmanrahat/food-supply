@@ -17,6 +17,17 @@ const foodSupplyApi = baseApi.injectEndpoints({
       }),
       invalidatesTags: ["supply"],
     }),
+    updateSupply: builder.mutation({
+      query: (payload) => {
+        console.log("from payload api", payload);
+        return {
+          url: `/supplies/${payload.id}`,
+          method: "PATCH",
+          body: payload.newData,
+        };
+      },
+      invalidatesTags: ["supply"],
+    }),
     removeSupply: builder.mutation({
       query: (id) => ({
         url: `/supplies/${id}`,
@@ -30,5 +41,6 @@ const foodSupplyApi = baseApi.injectEndpoints({
 export const {
   useAddSupplyMutation,
   useGetSupplyQuery,
+  useUpdateSupplyMutation,
   useRemoveSupplyMutation,
 } = foodSupplyApi;

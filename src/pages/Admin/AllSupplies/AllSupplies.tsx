@@ -1,3 +1,4 @@
+import EditeSupplyModal from "@/components/modal/EditeSupplyModal";
 import Container from "@/components/ui/Container";
 import Loading from "@/components/ui/Loading";
 import {
@@ -91,8 +92,7 @@ const AllSupplies = () => {
                 {item.supplyQuantity}
               </TableCell>
               <TableCell>
-                {/* <EditEventModal item={item} id={item._id} refetch={refetch} /> */}
-                <p>e</p>
+                <EditeSupplyModal item={item} id={item._id} />
               </TableCell>
               <TableCell className="text-right">
                 <button
