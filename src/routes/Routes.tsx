@@ -26,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "supplies/:id",
-        element: <SupplyDetails />,
+        element: (
+          <ProtectedRoute>
+            <SupplyDetails />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

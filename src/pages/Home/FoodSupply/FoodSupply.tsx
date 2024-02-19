@@ -40,7 +40,7 @@ const FoodSupply = () => {
               {supply.supplyQuantity}
             </p>
             <div className="absolute bottom-0 right-8">
-              <Link to="/admin/create-supply">
+              <Link to={`/supplies/${supply._id}`}>
                 <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-semibold cursor-pointer rounded-md">
                   Details
                 </button>

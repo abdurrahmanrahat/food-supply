@@ -9,7 +9,7 @@ const Discover = () => {
 
   return (
     <>
-      <Container className="md:flex justify-between gap-6 my-16 md:my-24 hidden">
+      <Container className="md:flex justify-between gap-6 my-16 md:my-24 hidden overflow-hidden">
         <motion.div
           style={styleLeft}
           ref={componentRef}

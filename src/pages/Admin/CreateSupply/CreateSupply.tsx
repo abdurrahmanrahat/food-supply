@@ -36,7 +36,6 @@ const CreateSupply = () => {
             supplyQuantity,
             supplyDesc,
           };
-          console.log("new supply", newSupply);
 
           // Send new supply to database store
           const res = await addSupply(newSupply);

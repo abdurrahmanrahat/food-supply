@@ -1,3 +1,4 @@
+import DonateSupplyModal from "@/components/modal/DonateSupplyModal";
 import Container from "@/components/ui/Container";
 import Loading from "@/components/ui/Loading";
 import { useGetSingleSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
@@ -12,10 +13,6 @@ const SupplyDetails = () => {
     return <Loading />;
   }
 
-  //   console.log(supply);
-  //   console.log(supply.data);
-  //   console.log(supply.data.supplyTitle);
-
   return (
     <Container className="my-16 md:my-24">
       <div className="md:flex gap-10 items-center">
@@ -23,7 +20,7 @@ const SupplyDetails = () => {
           <img src={supply.data.supplyImg} className="rounded-sm" alt="" />
         </div>
 
-        <div className="md:w-1/2 space-y-2 ">
+        <div className="md:w-1/2 space-y-2 mt-8 md:mt-0">
           <h4 className="font-medium text-[20px] md:text-[40px]">
             {supply.data.supplyTitle}
           </h4>
@@ -38,9 +35,7 @@ const SupplyDetails = () => {
           <p className="text-dark-light">{supply.data.supplyDesc}</p>
 
           <div className="pt-4">
-            <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-semibold cursor-pointer rounded-md">
-              Donate Now
-            </button>
+            <DonateSupplyModal item={supply.data} />
           </div>
         </div>
       </div>
