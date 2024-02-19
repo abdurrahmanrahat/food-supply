@@ -3,6 +3,7 @@ import { useCurrentUser } from "@/redux/features/auth/authSlice";
 import { useAddSupplyDonationMutation } from "@/redux/features/supplyDonation/supplyDonationApi";
 import { useAppSelector } from "@/redux/hooks";
 import { FieldValues, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import {
   Dialog,
@@ -21,7 +22,11 @@ type TDonateSupplyModalProps = {
 const DonateSupplyModal = ({ item }: TDonateSupplyModalProps) => {
   const user = useAppSelector(useCurrentUser);
 
+  // post data function from redux.
   const [addSupplyDonation] = useAddSupplyDonationMutation();
+
+  // redirect user
+  const navigate = useNavigate();
 
   // react hook form
   const { register, handleSubmit } = useForm();
@@ -42,6 +47,8 @@ const DonateSupplyModal = ({ item }: TDonateSupplyModalProps) => {
     toast.success("Supply donation successful", {
       duration: 2000,
     });
+
+    navigate("/admin/dashboard");
   };
 
   return (
