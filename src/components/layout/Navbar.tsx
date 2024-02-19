@@ -5,6 +5,7 @@ import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
 import ActiveLink from "../ui/ActiveLink";
 
 const Navbar = () => {
@@ -17,6 +18,9 @@ const Navbar = () => {
   // logout user
   const handleLogout = () => {
     dispatch(logout());
+    toast.success("User logout successfully", {
+      duration: 800,
+    });
   };
 
   return (

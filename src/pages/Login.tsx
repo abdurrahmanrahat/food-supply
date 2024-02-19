@@ -6,7 +6,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { verifyToken } from "@/utils/verifyToken";
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
 // type TUser = {
@@ -16,10 +16,14 @@ import { toast } from "sonner";
 // };
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const [login, { error }] = useLoginMutation();
+  // for redirect purpose
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  const [login] = useLoginMutation();
 
   const onSubmit = async (data: FieldValues) => {
     const toastId = toast.loading("User logging in...");
@@ -34,7 +38,7 @@ const Login = () => {
         id: toastId,
         duration: 2000,
       });
-      navigate("/");
+      navigate(from, { replace: true });
       console.log("user login success");
     } catch (error) {
       console.log("error from catch", error);
