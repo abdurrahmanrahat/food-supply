@@ -9,6 +9,13 @@ const foodSupplyApi = baseApi.injectEndpoints({
       }),
       providesTags: ["supply"],
     }),
+    getSingleSupply: builder.query({
+      query: (id) => ({
+        url: `/supplies/${id}`,
+        method: "GET",
+      }),
+      // providesTags: ["supply"],
+    }),
     addSupply: builder.mutation({
       query: (newSupply) => ({
         url: "/supplies",
@@ -41,6 +48,7 @@ const foodSupplyApi = baseApi.injectEndpoints({
 export const {
   useAddSupplyMutation,
   useGetSupplyQuery,
+  useGetSingleSupplyQuery,
   useUpdateSupplyMutation,
   useRemoveSupplyMutation,
 } = foodSupplyApi;
