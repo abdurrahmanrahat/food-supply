@@ -92,7 +92,7 @@ const AllSupplies = () => {
                 {item.supplyQuantity}
               </TableCell>
               <TableCell>
-                <EditeSupplyModal item={item} id={item._id} />
+                <EditeSupplyModal item={item} id={item._id!} />
               </TableCell>
               <TableCell className="text-right">
                 <button

@@ -1,3 +1,4 @@
+import { TSupply } from "@/pages/Admin/AllSupplies/AllSupplies";
 import { useUpdateSupplyMutation } from "@/redux/features/foodSupply/foodSupplyApi";
 import { FieldValues, useForm } from "react-hook-form";
 import { FaRegEdit } from "react-icons/fa";
@@ -15,7 +16,7 @@ import {
 const img_hosting_token = import.meta.env.VITE_image_uplode_token;
 
 type TSupplyModalProps = {
-  item: object;
+  item: TSupply;
   id: string;
 };
 
