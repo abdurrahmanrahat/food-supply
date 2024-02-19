@@ -41,7 +41,7 @@ const AdminLayout = () => {
             initial={{ x: -200, scale: 0.7, opacity: 0.6 }}
             animate={{ x: 0, scale: 1, opacity: 1 }}
             transition={{ duration: 0.9 }}
-            className="flex flex-col gap-2 bg-[#3D0066] p-8 absolute top-2 w-full text-primary-text"
+            className="flex flex-col gap-2 bg-[#3D0066] p-8 absolute top-2 w-full text-primary-text z-[999]"
           >
             <div className="flex items-center justify-between mb-5">
               <div>

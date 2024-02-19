@@ -1,12 +1,24 @@
 import InsinghtsChart from "@/components/charts/InsinghtsChart";
 import Container from "@/components/ui/Container";
+import Lottie from "lottie-react";
 import { FaEnvelopeOpenText, FaRegNewspaper } from "react-icons/fa";
 import { FaUsersViewfinder } from "react-icons/fa6";
+import WelcomeLottie from "../../../../public/DashboardWelcome.json";
 
 const Dashboard = () => {
   return (
     <Container className="my-14">
-      <div className="mt-5">
+      {/* lottie */}
+      <div className="flex justify-center items-center my-20">
+        <Lottie
+          animationData={WelcomeLottie}
+          loop={true}
+          className="max-w-[500px]"
+        />
+      </div>
+
+      {/* statistics */}
+      <div className="">
         <h2 className="font-bold text-[20px]">Today Donations Summery</h2>
         <div className="md:flex justify-between gap-6">
           {/* Jobs summery start     */}
