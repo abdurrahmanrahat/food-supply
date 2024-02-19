@@ -1,5 +1,5 @@
-import { useCurrentUser } from "@/redux/features/auth/authSlice";
-import { useAppSelector } from "@/redux/hooks";
+import { logout, useCurrentUser } from "@/redux/features/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -11,6 +11,13 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const user = useAppSelector(useCurrentUser);
+
+  const dispatch = useAppDispatch();
+
+  // logout user
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <motion.div
@@ -40,7 +47,10 @@ const Navbar = () => {
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
             </li>
             {user ? (
-              <button className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+              <button
+                onClick={handleLogout}
+                className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+              >
                 Logout
               </button>
             ) : (
@@ -102,12 +112,18 @@ const Navbar = () => {
                     >
                       <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
                     </li>
-                    <li
-                      onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
-                    >
-                      <ActiveLink to="/login">Login</ActiveLink>
-                    </li>
+                    {user ? (
+                      <button
+                        onClick={handleLogout}
+                        className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                      >
+                        Logout
+                      </button>
+                    ) : (
+                      <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+                        <ActiveLink to="/login">Login</ActiveLink>
+                      </li>
+                    )}
                   </ul>
                 </div>
               </motion.div>
