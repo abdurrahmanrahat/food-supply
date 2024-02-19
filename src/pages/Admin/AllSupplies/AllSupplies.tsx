@@ -10,6 +10,16 @@ import {
 } from "@/components/ui/table";
 import { useGetSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
 import { LuTrash2 } from "react-icons/lu";
+import { Link } from "react-router-dom";
+
+export type TSupply = {
+  _id: string;
+  supplyImg: string;
+  supplyTitle: string;
+  supplyCategory: string;
+  supplyQuantity: string;
+  supplyDesc: string;
+};
 
 const AllSupplies = () => {
   const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
@@ -20,14 +30,21 @@ const AllSupplies = () => {
 
   return (
     <Container className="my-10 border p-0 rounded-2xl">
-      <div className="text-center mb-14">
+      <div className="text-center mb-14 relative">
         <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#3D0066]">
           Food Supplies
         </span>
+        <div className="absolute right-0 top-[70px] md:top-5">
+          <Link to="/admin/create-supply">
+            <button className="px-[20px] md:px-[32px] py-[8px] bg-[#3D0066] text-white font-semibold cursor-pointer rounded-md">
+              Add Supply
+            </button>
+          </Link>
+        </div>
       </div>
 
       {/* table here */}
-      <Table>
+      <Table className="mt-8 md:mt-0">
         <TableHeader>
           <TableRow className="text-md text-[#333333] md:text-xl font-semibold">
             <TableHead>Supply Name</TableHead>
@@ -39,7 +56,7 @@ const AllSupplies = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {supplies.data?.map((item) => (
+          {supplies.data?.map((item: TSupply) => (
             <TableRow key={item._id}>
               <TableCell className="font-medium text-lg">
                 {item.supplyTitle}
