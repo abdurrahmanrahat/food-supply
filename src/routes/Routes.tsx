@@ -4,6 +4,7 @@ import CreateSupply from "@/pages/Admin/CreateSupply/CreateSupply";
 import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
+import Supplies from "@/pages/Supplies/Supplies";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../pages/Home/Home/Home";
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "supplies",
+        element: <Supplies />,
       },
     ],
   },

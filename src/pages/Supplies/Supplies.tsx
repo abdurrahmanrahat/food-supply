@@ -1,31 +1,26 @@
 import Container from "@/components/ui/Container";
-import { TSupply } from "@/pages/Admin/AllSupplies/AllSupplies";
+import Loading from "@/components/ui/Loading";
 import { useGetSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
 import { Link } from "react-router-dom";
+import { TSupply } from "../Admin/AllSupplies/AllSupplies";
 
-const FoodSupply = () => {
+const Supplies = () => {
   const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
 
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <Loading />;
   }
 
   return (
-    <Container className="my-16 md:my-24">
-      <div className="flex flex-col justify-center items-center">
-        <h2 className="text-[40px] md:text-[44px] text-black-text font-bold">
-          Food Supplies
-        </h2>
-
-        <p className="text-dark-light max-w-[65ch] pb-2 text-center">
-          Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus id
-          nibh ornare viverra. Ut posuere felis arcu tellus tempus in in
-          ultricies. Gravida tempus id nibh ornare viverra.
-        </p>
+    <Container className="my-16 md:my-16">
+      <div className="text-center mb-14 relative">
+        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#3D0066]">
+          All Food Supplies
+        </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
-        {supplies.data?.slice(0, 6).map((supply: TSupply) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16">
+        {supplies.data?.map((supply: TSupply) => (
           <div key={supply._id} className="relative">
             <img src={supply.supplyImg} className="rounded-sm" alt="" />
             <h4 className="font-medium text-[20px] mt-2">
@@ -49,16 +44,8 @@ const FoodSupply = () => {
           </div>
         ))}
       </div>
-
-      <div className="mt-20 flex justify-center items-center">
-        <Link to="/supplies">
-          <button className="px-[20px] md:px-[32px] py-[8px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700">
-            View All
-          </button>
-        </Link>
-      </div>
     </Container>
   );
 };
 
-export default FoodSupply;
+export default Supplies;
