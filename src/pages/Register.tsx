@@ -43,7 +43,7 @@ const Register = () => {
 
           <FSInput type="text" name="email" label="Email:" />
 
-          <FSInput type="text" name="password" label="Password:" />
+          <FSInput type="password" name="password" label="Password:" />
 
           <Button htmlType="submit" className="md:text-[15px]">
             Register

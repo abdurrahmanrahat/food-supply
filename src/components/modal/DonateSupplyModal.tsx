@@ -88,7 +88,7 @@ const DonateSupplyModal = ({ item }: TDonateSupplyModalProps) => {
               <input
                 type="email"
                 placeholder="Email"
-                defaultValue={user?.email}
+                defaultValue={(user as any)?.email}
                 {...register("userEmail", { required: true })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />

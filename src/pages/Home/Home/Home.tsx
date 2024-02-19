@@ -14,6 +14,8 @@ const Home = () => {
 
       <FoodSupply />
 
+      {/* what we do */}
+
       <Gallery />
 
       <Testimonials />

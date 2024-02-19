@@ -51,7 +51,7 @@ const Login = () => {
         <FormWrap onSubmit={onSubmit}>
           <FSInput type="text" name="email" label="Email:" />
 
-          <FSInput type="text" name="password" label="Password:" />
+          <FSInput type="password" name="password" label="Password:" />
 
           <Button htmlType="submit" className="md:text-[15px]">
             Login
