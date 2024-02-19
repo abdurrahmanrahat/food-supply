@@ -1,12 +1,13 @@
 import { useAddSupplyMutation } from "@/redux/features/foodSupply/foodSupplyApi";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const img_hosting_token = import.meta.env.VITE_image_uplode_token;
 
 const CreateSupply = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
-  const [addSupply, { error }] = useAddSupplyMutation();
+  const [addSupply] = useAddSupplyMutation();
 
   // react hook form
   const { register, handleSubmit, reset } = useForm();
@@ -41,7 +42,10 @@ const CreateSupply = () => {
           const res = await addSupply(newSupply);
           console.log(res);
           if (res.data.success) {
-            console.log("Supply inserted successfully");
+            reset();
+            toast.success("Supply inserted successfully", {
+              duration: 2000,
+            });
           }
         }
       });

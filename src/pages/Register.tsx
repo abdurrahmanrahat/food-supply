@@ -6,6 +6,7 @@ import { useAppDispatch } from "@/redux/hooks";
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -16,13 +17,17 @@ const Register = () => {
   console.log("error from register", error);
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
+    const toastId = toast.loading("User registering...");
 
     try {
       const res = await register(data);
       console.log(res);
 
       dispatch(setUser({ user: data, token: null }));
+      toast.success("User logged in successfully", {
+        id: toastId,
+        duration: 2000,
+      });
       navigate("/");
       console.log("user registered");
     } catch (error) {

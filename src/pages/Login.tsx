@@ -7,6 +7,7 @@ import { verifyToken } from "@/utils/verifyToken";
 import { Button, Row } from "antd";
 import { FieldValues } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 // type TUser = {
 //   email: string;
@@ -21,12 +22,18 @@ const Login = () => {
   const [login, { error }] = useLoginMutation();
 
   const onSubmit = async (data: FieldValues) => {
+    const toastId = toast.loading("User logging in...");
+
     try {
       const res = await login(data).unwrap();
       console.log("res", res);
       const user = verifyToken(res.token);
 
       dispatch(setUser({ user, token: res.token }));
+      toast.success("User logged in successfully", {
+        id: toastId,
+        duration: 2000,
+      });
       navigate("/");
       console.log("user login success");
     } catch (error) {
