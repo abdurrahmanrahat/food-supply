@@ -1,4 +1,4 @@
-## Food Supply || Live Line- _https://food-supply.netlify.app/_
+## Food Supply || Live View- _https://food-supply.netlify.app/_
 
 Eye-caching UI design with some backed functionality especially CRUD operation in Food Supply donation project that showcase an attractive home page design with framer animation. Here also has Dashboard functionalities with piCharts.
 

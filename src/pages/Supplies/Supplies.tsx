@@ -14,12 +14,12 @@ const Supplies = () => {
   return (
     <Container className="my-16 md:my-16">
       <div className="text-center mb-14 relative">
-        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#3D0066]">
+        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#DABC95]">
           All Food Supplies
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16 pb-8">
         {supplies.data?.map((supply: TSupply) => (
           <div key={supply._id} className="relative">
             <img src={supply.supplyImg} className="rounded-sm" alt="" />

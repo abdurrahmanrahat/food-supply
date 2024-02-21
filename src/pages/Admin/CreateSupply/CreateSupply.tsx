@@ -53,7 +53,7 @@ const CreateSupply = () => {
   return (
     <div className="my-10">
       <div className="text-center mb-14">
-        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#3D0066]">
+        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#DABC95]">
           Create Supply
         </span>
       </div>
@@ -114,7 +114,7 @@ const CreateSupply = () => {
 
         <div className="flex items-center justify-center">
           <input
-            className="px-[42px] py-[10px] bg-[#3D0066] text-white font-semibold cursor-pointer rounded-md"
+            className="px-[20px] md:px-[32px] py-[8px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700"
             type="submit"
             value="Add Supply"
           />
