@@ -1,30 +1,52 @@
 import Container from "@/components/ui/Container";
 import { FieldValues, useForm } from "react-hook-form";
 
+const img_hosting_token = import.meta.env.VITE_image_uplode_token;
+
 const Volunteer = () => {
+  const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+
   // react hook form
   const { register, handleSubmit } = useForm();
   const onSubmit = (data: FieldValues) => {
     console.log(data);
+    const { name, email, number, location, profession } = data;
 
-    //  new supply
-    //   const newSupply = {
-    //     supplyImg,
-    //     name,
-    //     supplyCategory,
-    //     supplyQuantity,
-    //     supplyDesc,
-    //   };
+    // img hosting to imgbb
+    const formData = new FormData();
+    formData.append("image", data.image[0]);
 
-    // Send new supply to database store
-    //   const res = await addSupply(newSupply);
-    //   console.log(res);
-    //   if (res) {
-    //     reset();
-    //     toast.success("Supply inserted successfully", {
-    //       duration: 2000,
-    //     });
-    //   }
+    fetch(img_hosting_url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then(async (imgRes) => {
+        if (imgRes.success) {
+          const image = imgRes.data.display_url;
+
+          //  new volunteer
+          const newVolunteer = {
+            name,
+            image,
+            email,
+            number,
+            location,
+            profession,
+          };
+          console.log(newVolunteer);
+
+          // Send new supply to database store
+          // const res = await addSupply(newSupply);
+          // console.log(res);
+          // if (res) {
+          //   reset();
+          //   toast.success("Supply inserted successfully", {
+          //     duration: 2000,
+          //   });
+          // }
+        }
+      });
   };
 
   return (
@@ -45,6 +67,15 @@ const Volunteer = () => {
                 type="text"
                 placeholder="Name"
                 {...register("name", { required: true })}
+                className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
+              />
+            </div>
+
+            {/* Photo Field */}
+            <div>
+              <input
+                type="file"
+                {...register("image", { required: true })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />
             </div>
@@ -75,6 +106,16 @@ const Volunteer = () => {
                 type="text"
                 placeholder="Location"
                 {...register("location", { required: true })}
+                className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
+              />
+            </div>
+
+            {/* profession */}
+            <div>
+              <input
+                type="text"
+                placeholder="Profession"
+                {...register("profession", { required: true })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />
             </div>
