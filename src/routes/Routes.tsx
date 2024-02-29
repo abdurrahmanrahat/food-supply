@@ -4,6 +4,7 @@ import AllSupplies from "@/pages/Admin/AllSupplies/AllSupplies";
 import CreateSupply from "@/pages/Admin/CreateSupply/CreateSupply";
 import CreateTestimonial from "@/pages/Admin/CreateTestimonial/CreateTestimonial";
 import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
+import Community from "@/pages/Community/Community";
 import Leaderboard from "@/pages/Leaderboard/Leaderboard";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutUs />,
+      },
+      {
+        path: "community",
+        element: <Community />,
       },
     ],
   },

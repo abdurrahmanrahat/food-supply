@@ -42,20 +42,23 @@ const Navbar = () => {
 
           {/* desktop nav links */}
           <ul className="space-x-6 hidden lg:flex text-[#D5E7F3]">
-            <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/">Home</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/supplies">All Supplies</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/volunteer">Volunteer</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/about-us">About Us</ActiveLink>
+            </li>
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+              <ActiveLink to="/community">Community</ActiveLink>
             </li>
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
@@ -113,33 +116,39 @@ const Navbar = () => {
                   <ul className="space-y-4">
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/">Home</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/supplies">All Supplies</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/volunteer">Volunteer</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/about-us">About Us</ActiveLink>
+                    </li>
+                    <li
+                      onClick={() => setToggle((prev) => !prev)}
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                    >
+                      <ActiveLink to="/community">Community</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
