@@ -2,6 +2,7 @@ import AdminLayout from "@/components/layout/AdminLayout";
 import AllSupplies from "@/pages/Admin/AllSupplies/AllSupplies";
 import CreateSupply from "@/pages/Admin/CreateSupply/CreateSupply";
 import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
+import Leaderboard from "@/pages/Leaderboard/Leaderboard";
 import Login from "@/pages/Login";
 import Register from "@/pages/Register";
 import Supplies from "@/pages/Supplies/Supplies";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             <SupplyDetails />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "leaderboard",
+        element: <Leaderboard />,
       },
     ],
   },
