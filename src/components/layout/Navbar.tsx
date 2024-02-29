@@ -51,6 +51,9 @@ const Navbar = () => {
             <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
             </li>
+            <li className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500">
+              <ActiveLink to="/volunteer">Volunteer</ActiveLink>
+            </li>
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
             </li>
@@ -122,6 +125,12 @@ const Navbar = () => {
                       className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
+                    </li>
+                    <li
+                      onClick={() => setToggle((prev) => !prev)}
+                      className="font-semibold md:text-[18px] 2xl:text-[19px] hover:text-secondary-text transition-all duration-500"
+                    >
+                      <ActiveLink to="/volunteer">Volunteer</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
