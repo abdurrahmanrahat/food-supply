@@ -1,4 +1,5 @@
 import AdminLayout from "@/components/layout/AdminLayout";
+import AboutUs from "@/pages/AboutUs/AboutUs";
 import AllSupplies from "@/pages/Admin/AllSupplies/AllSupplies";
 import CreateSupply from "@/pages/Admin/CreateSupply/CreateSupply";
 import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "volunteer",
         element: <Volunteer />,
+      },
+      {
+        path: "about-us",
+        element: <AboutUs />,
       },
     ],
   },

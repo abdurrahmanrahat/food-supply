@@ -1,13 +1,17 @@
 import Container from "@/components/ui/Container";
+import { useAddVolunteerMutation } from "@/redux/features/volunteer/volunteer.api";
 import { FieldValues, useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const img_hosting_token = import.meta.env.VITE_image_uplode_token;
 
 const Volunteer = () => {
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
+  const [addVolunteer] = useAddVolunteerMutation();
+
   // react hook form
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data: FieldValues) => {
     console.log(data);
     const { name, email, number, location, profession } = data;
@@ -36,15 +40,14 @@ const Volunteer = () => {
           };
           console.log(newVolunteer);
 
-          // Send new supply to database store
-          // const res = await addSupply(newSupply);
-          // console.log(res);
-          // if (res) {
-          //   reset();
-          //   toast.success("Supply inserted successfully", {
-          //     duration: 2000,
-          //   });
-          // }
+          // Send valunteer to database store
+          const res = await addVolunteer(newVolunteer);
+          if (res) {
+            reset();
+            toast.success("Supply inserted successfully", {
+              duration: 1500,
+            });
+          }
         }
       });
   };
