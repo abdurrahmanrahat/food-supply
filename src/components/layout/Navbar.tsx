@@ -7,6 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import ActiveLink from "../ui/ActiveLink";
+import ThemeToggle from "../ui/ThemeToggle";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -62,6 +63,9 @@ const Navbar = () => {
                 <ActiveLink to="/login">Login</ActiveLink>
               </li>
             )}
+            <li>
+              <ThemeToggle />
+            </li>
           </ul>
 
           {/* mobile menu */}
@@ -128,6 +132,9 @@ const Navbar = () => {
                         <ActiveLink to="/login">Login</ActiveLink>
                       </li>
                     )}
+                    <li>
+                      <ThemeToggle />
+                    </li>
                   </ul>
                 </div>
               </motion.div>
