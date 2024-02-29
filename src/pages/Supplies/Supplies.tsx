@@ -14,7 +14,7 @@ const Supplies = () => {
   return (
     <Container className="my-16 md:my-16">
       <div className="text-center mb-14 relative">
-        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#DABC95]">
+        <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95]">
           All Food Supplies
         </span>
       </div>

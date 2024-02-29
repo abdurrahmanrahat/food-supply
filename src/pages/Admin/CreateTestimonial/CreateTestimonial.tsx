@@ -52,7 +52,7 @@ const CreateTestimonial = () => {
   return (
     <div className="my-10">
       <div className="text-center mb-14">
-        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#DABC95]">
+        <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95]">
           Create Testimonial
         </span>
       </div>

@@ -46,8 +46,8 @@ const Dashboard = () => {
             <div className="rounded-lg border border-gray-200 p-2">
               <FaEnvelopeOpenText className=" text-2xl mb-2" />
               <h2 className="font-bold">100</h2>
-              <p className="text-sm font-bold">Total Inspiration</p>
-              <p className="text-sm text-slate-500">5% from Yesterday</p>
+              <p className="text-sm font-bold">Total Donations</p>
+              <p className="text-sm text-slate-500">12% from Yesterday</p>
             </div>
           </div>
           {/* Jobs summery end*/}

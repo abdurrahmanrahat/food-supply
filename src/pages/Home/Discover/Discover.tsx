@@ -18,9 +18,7 @@ const Discover = () => {
           <h4 className="text-[#D9A868] text-[30px] satisfy-regular">
             Discover
           </h4>
-          <h2 className="text-black-text text-[40px] md:text-[44px] font-bold">
-            OUR STORY
-          </h2>
+          <h2 className="text-[40px] md:text-[44px] font-bold">OUR STORY</h2>
           <p className="text-dark-light max-w-[60ch] pt-4">
             This initiative focuses on implementing sustainable practices to
             minimize food waste while simultaneously distributing surplus food
@@ -28,7 +26,7 @@ const Discover = () => {
             distribution strategies.
           </p>
           <div className="pt-4">
-            <button className="text-black-text font-medium hover:border-b-[1.5px] border-[#D9A868] transition-all">
+            <button className="font-medium hover:border-b-[1.5px] border-[#D9A868] transition-all">
               Learn More
             </button>
           </div>

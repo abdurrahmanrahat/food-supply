@@ -48,7 +48,7 @@ const AllSupplies = () => {
   return (
     <Container className="my-10 border p-0 rounded-2xl">
       <div className="text-center mb-14 relative">
-        <span className="text-[32px] md:text-[40px] text-[#333333] font-bold border-b-[3px] border-b-[#DABC95]">
+        <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95]">
           Food Supplies
         </span>
         <div className="absolute right-0 top-[70px] md:top-5">
