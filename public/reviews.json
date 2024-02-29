@@ -3,30 +3,35 @@
     "_id": 1,
     "name": "John Doe",
     "review": "The web design services provided by ABC Company were outstanding. They created a modern and user-friendly website that perfectly represents services our brand. The team was professional, responsive, and delivered services beyond our expectations.",
-    "image": "https://i.ibb.co/jfPcH4N/one.png"
+    "image": "https://i.ibb.co/jfPcH4N/one.png",
+    "role": "Client"
   },
   {
     "_id": 2,
     "name": "Jane Smith",
     "review": "I had a fantastic experience working with XYZ Company for graphic design services. Their creativity and attention to detail truly brought our ideas to life. The team's ability to understand our vision and deliver exceptional designs exceeded our expectations.",
-    "image": "https://i.ibb.co/tcXy9fz/two.png"
+    "image": "https://i.ibb.co/tcXy9fz/two.png",
+    "role": "CEO"
   },
   {
     "_id": 3,
     "name": "Mike Johnson",
     "review": "Digital marketing services offered by DEF Company were instrumental in boosting our online presence and driving measurable results. Their strategic approach, data-driven insights, and effective campaigns significantly improved our brand visibility and customer engagement.",
-    "image": "https://i.ibb.co/QvYtJ9H/three.png"
+    "image": "https://i.ibb.co/QvYtJ9H/three.png",
+    "role": "Manager"
   },
   {
     "_id": 4,
     "name": "Sarah Williams",
     "review": "Working with GHI Company for brand identity services was a game-changer for our business. They captured the essence of our brand and developed a comprehensive brand strategy that sets us apart. Their attention to detail and ability to create a cohesive brand experience is commendable.",
-    "image": "https://i.ibb.co/MVQkzZj/four.png"
+    "image": "https://i.ibb.co/MVQkzZj/four.png",
+    "role": "Owner"
   },
   {
     "_id": 5,
     "name": "David Brown",
     "review": "The team at JKL Company provided exceptional services across web design, graphic design, and digital marketing. Their comprehensive approach and seamless integration of brand identity resulted in a powerful and unified brand presence. Highly recommended!",
-    "image": "https://i.ibb.co/mS8Nd0v/five.png"
+    "image": "https://i.ibb.co/mS8Nd0v/five.png",
+    "role": "CTO"
   }
 ]

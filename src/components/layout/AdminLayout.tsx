@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { IoServerOutline } from "react-icons/io5";
 import { LuLayoutDashboard, LuPlusCircle } from "react-icons/lu";
+import { MdOutlineRateReview } from "react-icons/md";
 import { SiHomeadvisor } from "react-icons/si";
 import { Link, Outlet } from "react-router-dom";
 import ActiveLink from "../ui/ActiveLink";
@@ -89,6 +90,18 @@ const AdminLayout = () => {
                 <div className="flex items-center gap-2">
                   <IoServerOutline className="text-[18px]" />
                   <span className="truncate">All Supplies</span>
+                </div>
+              </ActiveLink>
+            </p>
+
+            <p
+              onClick={() => setToggle((prev) => !prev)}
+              className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+            >
+              <ActiveLink to="/admin/create-testimonial">
+                <div className="flex items-center gap-2">
+                  <MdOutlineRateReview className="text-[18px]" />
+                  <span className="truncate">Make Review</span>
                 </div>
               </ActiveLink>
             </p>

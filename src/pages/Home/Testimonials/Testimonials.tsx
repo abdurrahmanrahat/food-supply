@@ -12,6 +12,7 @@ type TTestimonial = {
   name: string;
   review: string;
   image: string;
+  role: string;
 };
 
 const Testimonials = () => {
@@ -87,7 +88,7 @@ const Testimonials = () => {
                   <div className="ms-4 mt-5">
                     <h2 className="text-xl font-black">{data?.name}</h2>
                     <p className="text-center font-semibold text-gray-500 text-sm">
-                      Client
+                      {data?.role}
                     </p>
                   </div>
                 </div>

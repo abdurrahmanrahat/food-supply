@@ -24,7 +24,7 @@ const AboutUs = () => {
       </div>
 
       {/* volunteers */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-between">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-between pb-8">
         {volunteers?.data.map((item: TVolunteer) => (
           <div
             key={item._id}

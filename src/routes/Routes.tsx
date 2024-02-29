@@ -2,6 +2,7 @@ import AdminLayout from "@/components/layout/AdminLayout";
 import AboutUs from "@/pages/AboutUs/AboutUs";
 import AllSupplies from "@/pages/Admin/AllSupplies/AllSupplies";
 import CreateSupply from "@/pages/Admin/CreateSupply/CreateSupply";
+import CreateTestimonial from "@/pages/Admin/CreateTestimonial/CreateTestimonial";
 import Dashboard from "@/pages/Admin/Dashboard/Dashboard";
 import Leaderboard from "@/pages/Leaderboard/Leaderboard";
 import Login from "@/pages/Login";
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/create-supply",
         element: <CreateSupply />,
+      },
+      {
+        path: "/admin/create-testimonial",
+        element: <CreateTestimonial />,
       },
     ],
   },
