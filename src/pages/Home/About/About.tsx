@@ -22,7 +22,9 @@ const About = () => {
         className="md:w-1/2 flex flex-col justify-center"
       >
         <h4 className="text-[#D9A868] text-[30px] satisfy-regular">Discover</h4>
-        <h2 className="text-[40px] md:text-[44px] font-bold">WHAT WE ARE?</h2>
+        <h2 className="text-[40px] md:text-[44px] font-bold domine-font">
+          WHAT WE ARE?
+        </h2>
         <p className="text-dark-light max-w-[60ch] pt-4">
           Ultrices vitae auctor eu augue. Pellentesque dignissim eni amet
           venenatis Vulputate enim nulla aliquet porttitor la. Dictumst quisque

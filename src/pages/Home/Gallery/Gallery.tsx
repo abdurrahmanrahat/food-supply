@@ -16,7 +16,9 @@ const Gallery = () => {
     <Container className="my-16 md:my-24">
       <motion.div ref={componentRef} style={style}>
         <div className="flex flex-col justify-center items-center">
-          <h2 className="text-[40px] md:text-[44px] font-bold">Photos</h2>
+          <h2 className="text-[40px] md:text-[44px] font-bold domine-font">
+            Photos
+          </h2>
 
           <p className="text-dark-light max-w-[65ch] pb-2 text-center">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus

@@ -27,7 +27,7 @@ const Testimonials = () => {
   return (
     <Container className="my-16 md:my-24">
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-[40px] md:text-[44px] font-bold">
+        <h2 className="text-[40px] md:text-[44px] font-bold domine-font">
           What Donors Say
         </h2>
 

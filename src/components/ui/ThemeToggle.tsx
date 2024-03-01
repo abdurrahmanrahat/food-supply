@@ -6,7 +6,11 @@ import Sun from "../svg/Sun";
 const ThemeToggle = () => {
   const { mood, toggle } = useContext(ThemeContext) as TThemeContextProps;
 
-  return <div onClick={toggle}>{mood === "light" ? <Sun /> : <Moon />}</div>;
+  return (
+    <div onClick={toggle} className="cursor-pointer">
+      {mood === "light" ? <Sun /> : <Moon />}
+    </div>
+  );
 };
 
 export default ThemeToggle;
