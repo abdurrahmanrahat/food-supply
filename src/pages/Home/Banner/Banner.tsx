@@ -36,7 +36,7 @@ const Banner = () => {
           />
 
           <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10  w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px]  text-white text-center">
-            <h1 className="text-white text-lg md:text-[24px] lg:text-[44px] lg:leading-[44px] font-extrabold">
+            <h1 className="text-white text-lg md:text-[24px] lg:text-[48px] domine-font lg:leading-[56px] font-extrabold">
               Zero Waste Food Distribution
             </h1>
             <p className="text-[13px] md:text-[17px] 2xl:text-[18px]">
@@ -55,8 +55,8 @@ const Banner = () => {
           />
 
           <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10  w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px]  text-white text-center">
-            <h1 className="text-white text-lg md:text-[24px] lg:text-[44px] lg:leading-[44px] font-extrabold">
-              Balancing Surplus and Scarcity
+            <h1 className="text-white text-lg md:text-[24px] lg:text-[48px] domine-font lg:leading-[56px] font-extrabold">
+              Balance Surplus and Scarcity
             </h1>
             <p className="text-[13px] md:text-[17px] 2xl:text-[18px]">
               Striking a balance! Our project harmonizes food distribution,
@@ -74,7 +74,7 @@ const Banner = () => {
           />
 
           <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10  w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px]  text-white text-center">
-            <h1 className="text-white text-lg md:text-[24px] lg:text-[44px] lg:leading-[44px] font-extrabold">
+            <h1 className="text-white text-lg md:text-[24px] lg:text-[48px] domine-font lg:leading-[56px] font-extrabold">
               Regional Food Redistribution
             </h1>
             <p className="text-[13px] md:text-[17px] 2xl:text-[18px]">
@@ -92,8 +92,8 @@ const Banner = () => {
             src="https://i.ibb.co/VV4jmHr/2.jpg"
           />
 
-          <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10 w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px]  text-white text-center">
-            <h1 className="text-white text-lg md:text-[24px] lg:text-[44px] lg:leading-[44px] font-extrabold">
+          <div className="absolute top-5 md:top-20 lg:top-40 2xl:top-44 left-8 md:left-16 lg:left-20 space-y-2 lg:space-y-10 w-[190px] md:w-[280px] lg:w-[420px] 2xl:w-[440px] text-white text-center">
+            <h1 className="text-white text-lg md:text-[24px] lg:text-[48px] domine-font lg:leading-[56px] font-extrabold">
               Smart Food Supply Networks
             </h1>
             <p className="text-[13px] md:text-[17px] 2xl:text-[18px]">

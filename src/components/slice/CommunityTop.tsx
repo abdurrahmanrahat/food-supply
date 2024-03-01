@@ -14,10 +14,10 @@ const CommunityTop = () => {
         <h4 className="text-[#D9A868] text-[30px] satisfy-regular">
           Community
         </h4>
-        <h2 className="text-[40px] md:text-[60px] font-semibold">
+        <h2 className="text-[40px] md:text-[60px] domine-font font-semibold">
           Wall Of Gratitude
         </h2>
-        <p className="hidden md:block">
+        <p className="hidden md:block text-dark-light">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem tempora
           iste doloribus quidem eaque. Omnis recusandae maiores adipisci earum
           atque!
