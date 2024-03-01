@@ -5,6 +5,6 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://food-supply-server.vercel.app/api/v1",
   }),
-  tagTypes: ["supply", "donation", "volunteer", "testimonial"],
+  tagTypes: ["supply", "donation", "volunteer", "testimonial", "gratitude"],
   endpoints: () => ({}),
 });

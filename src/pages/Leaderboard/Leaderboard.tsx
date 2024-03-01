@@ -1,4 +1,5 @@
 import Container from "@/components/ui/Container";
+import Loading from "@/components/ui/Loading";
 import { useGetSupplyDonationQuery } from "@/redux/features/supplyDonation/supplyDonationApi";
 
 type TDonations = {
@@ -14,8 +15,12 @@ type TDonations = {
 };
 
 const Leaderboard = () => {
-  const { data: suppliesDonations } = useGetSupplyDonationQuery(undefined);
-  console.log(suppliesDonations);
+  const { data: suppliesDonations, isLoading } =
+    useGetSupplyDonationQuery(undefined);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <Container className="my-16">
