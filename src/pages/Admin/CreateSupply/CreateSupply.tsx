@@ -39,7 +39,7 @@ const CreateSupply = () => {
 
           // Send new supply to database store
           const res = await addSupply(newSupply);
-          console.log(res);
+
           if (res) {
             reset();
             toast.success("Supply inserted successfully", {

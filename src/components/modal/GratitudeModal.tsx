@@ -2,6 +2,7 @@ import { useCurrentUser } from "@/redux/features/auth/authSlice";
 import { useAddGratitudeMutation } from "@/redux/features/gratitude/gratitude.api";
 import { useAppSelector } from "@/redux/hooks";
 import { FieldValues, useForm } from "react-hook-form";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogClose,
@@ -19,20 +20,23 @@ const GratitudeModal = () => {
   const [addGratitude] = useAddGratitudeMutation();
 
   // react hook form
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data: FieldValues) => {
-    console.log(data);
     const { userName, userEmail, comment } = data;
 
     const gratitude = { userName, userEmail, comment };
-    console.log(gratitude);
 
-    // await addSupplyDonation();
+    const res = (await addGratitude(gratitude)) as any;
 
-    // toast.success("Supply donation successful", {
-    //   duration: 2000,
-    // });
+    if (res.data.success) {
+      toast.success("Gratitude successfully send", {
+        duration: 2000,
+      });
+      reset();
+    } else {
+      toast.error(res.data.message, { duration: 1500 });
+    }
   };
 
   return (

@@ -49,16 +49,17 @@ const Navbar = () => {
               <ActiveLink to="/supplies">All Supplies</ActiveLink>
             </li>
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-              <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
-            </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-              <ActiveLink to="/volunteer">Volunteer</ActiveLink>
-            </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/about-us">About Us</ActiveLink>
             </li>
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/community">Community</ActiveLink>
+            </li>
+
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+              <ActiveLink to="/volunteer">Volunteer</ActiveLink>
+            </li>
+            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+              <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
             </li>
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
@@ -130,8 +131,15 @@ const Navbar = () => {
                       onClick={() => setToggle((prev) => !prev)}
                       className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
-                      <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
+                      <ActiveLink to="/about-us">About Us</ActiveLink>
                     </li>
+                    <li
+                      onClick={() => setToggle((prev) => !prev)}
+                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                    >
+                      <ActiveLink to="/community">Community</ActiveLink>
+                    </li>
+
                     <li
                       onClick={() => setToggle((prev) => !prev)}
                       className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
@@ -142,13 +150,7 @@ const Navbar = () => {
                       onClick={() => setToggle((prev) => !prev)}
                       className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
-                      <ActiveLink to="/about-us">About Us</ActiveLink>
-                    </li>
-                    <li
-                      onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
-                    >
-                      <ActiveLink to="/community">Community</ActiveLink>
+                      <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
