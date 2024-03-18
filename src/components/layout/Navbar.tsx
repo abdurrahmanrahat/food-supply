@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import ActiveLink from "../ui/ActiveLink";
 import ThemeToggle from "../ui/ThemeToggle";
+import DropDownMenu from "./DropDownMenu";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -55,12 +56,8 @@ const Navbar = () => {
               <ActiveLink to="/community">Community</ActiveLink>
             </li>
 
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-              <ActiveLink to="/volunteer">Volunteer</ActiveLink>
-            </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-              <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
-            </li>
+            <DropDownMenu />
+
             <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
             </li>
@@ -140,18 +137,8 @@ const Navbar = () => {
                       <ActiveLink to="/community">Community</ActiveLink>
                     </li>
 
-                    <li
-                      onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
-                    >
-                      <ActiveLink to="/volunteer">Volunteer</ActiveLink>
-                    </li>
-                    <li
-                      onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
-                    >
-                      <ActiveLink to="/leaderboard">Leaderboard</ActiveLink>
-                    </li>
+                    <DropDownMenu />
+
                     <li
                       onClick={() => setToggle((prev) => !prev)}
                       className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
