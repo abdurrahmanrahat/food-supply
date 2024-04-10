@@ -1,9 +1,9 @@
+import WelcomeLottie from "@/assets/dashboard/DashboardWelcome.json";
 import InsinghtsChart from "@/components/charts/InsinghtsChart";
 import Container from "@/components/ui/Container";
 import Lottie from "lottie-react";
 import { FaEnvelopeOpenText, FaRegNewspaper } from "react-icons/fa";
 import { FaUsersViewfinder } from "react-icons/fa6";
-import WelcomeLottie from "../../../../public/DashboardWelcome.json";
 
 const Dashboard = () => {
   return (
@@ -40,7 +40,7 @@ const Dashboard = () => {
               <FaEnvelopeOpenText className=" text-2xl mb-2" />
               <h2 className="font-bold">100</h2>
               <p className="text-sm font-bold">Total Inspiration</p>
-              <p className="text-sm text-slate-500">5% from Yesterday</p>
+              <p className="text-sm text-slate-500">7% from Last Week</p>
             </div>
 
             <div className="rounded-lg border border-gray-200 p-2">

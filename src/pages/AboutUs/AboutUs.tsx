@@ -32,11 +32,13 @@ const AboutUs = () => {
         {volunteers?.data.map((item: TVolunteer) => (
           <div key={item._id} className="max-w-sm rounded-lg overflow-hidden">
             <div className="">
-              <img
-                className="w-full h-60 object-cover"
-                src={item.image}
-                alt={item.name}
-              />
+              <div className="">
+                <img
+                  className="w-full h-60 object-cover"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </div>
               <div className="flex justify-center -mt-6">
                 <h4 className="bg-[#D9A868] px-4 py-2 rounded-md text-white font-bold domine-font md:text-[18px] cursor-pointer">
                   {item.profession}

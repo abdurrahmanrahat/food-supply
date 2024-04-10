@@ -1,7 +1,7 @@
+import { AiOutlineHome } from "react-icons/ai";
 import { IoServerOutline } from "react-icons/io5";
 import { LuLayoutDashboard, LuPlusCircle } from "react-icons/lu";
 import { MdOutlineRateReview } from "react-icons/md";
-import { SiHomeadvisor } from "react-icons/si";
 import { Link } from "react-router-dom";
 import ActiveLink from "../ui/ActiveLink";
 
@@ -54,7 +54,7 @@ const Sidebar = () => {
         <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
           <ActiveLink to="/">
             <div className="flex items-center gap-2">
-              <SiHomeadvisor className="text-[18px]" />
+              <AiOutlineHome className="text-[18px]" />
               <span className="truncate">Home</span>
             </div>
           </ActiveLink>

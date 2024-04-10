@@ -25,7 +25,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <Container className="my-16 md:my-24">
+    <Container className="mb-16 mt-12 md:mb-24">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-[40px] md:text-[44px] font-bold domine-font">
           What Donors Say
@@ -65,7 +65,7 @@ const Testimonials = () => {
         {/* map section start */}
         {reviews?.map((data) => (
           <SwiperSlide key={data._id}>
-            <div className="group group/item mt-10 bg-[#F5F6F7] lg:px-12 mx-3 rounded-md">
+            <div className="group group/item mt-10 bg-[#F7F4ED] lg:px-12 mx-3 rounded-md">
               <div className="flex items-center justify-center mb-5 pt-6">
                 <FaQuoteLeft className="text-4xl text-[#B7BAC7] duration-500" />
               </div>

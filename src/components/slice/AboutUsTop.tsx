@@ -21,7 +21,7 @@ const AboutUsTop = () => {
         </p>
         {/* cards */}
         <div className="flex justify-between p-8">
-          <div>
+          <div className="">
             <p>
               <BiDonateHeart className="text-[40px] text-[#D9A868]" />
             </p>
