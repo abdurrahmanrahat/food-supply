@@ -12,7 +12,7 @@ const UpcomingEvents = () => {
           Upcoming Events
         </h2>
 
-        <p className="text-dark-light max-w-[80ch] pb-2 text-center">
+        <p className="text-[14px] md:text-[15px] text-dark-light max-w-[80ch] pb-2 text-center">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus id
           nibh ornare viverra. Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Iste nam deserunt minus accusamus.
