@@ -43,6 +43,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
       .then(async (imgRes) => {
         if (imgRes.success) {
           const supplyImg = imgRes.data.display_url;
+          console.log(supplyImg);
 
           //  new supply
           const newData = {
@@ -59,7 +60,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
           const res = await updateSupply(payload);
           if (res) {
             // reset();
-            toast.success("Supply inserted successfully", {
+            toast.success("Supply updated successfully", {
               duration: 2000,
             });
           }
@@ -148,7 +149,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
               <input
                 className="px-[42px] py-[10px] bg-[#3D0066] text-white font-semibold cursor-pointer rounded-md"
                 type="submit"
-                value="Add Supply"
+                value="Edit Supply"
               />
             </DialogClose>
           </div>

@@ -15,50 +15,50 @@ const Sidebar = () => {
           </h2>
         </Link>
 
-        <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+        <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
           <ActiveLink to="/admin/dashboard">
             <div className="flex items-center gap-2">
               <LuLayoutDashboard className="text-[18px]" />
               <span className="truncate">Dashboard</span>
             </div>
           </ActiveLink>
-        </p>
+        </div>
 
-        <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+        <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
           <ActiveLink to="/admin/create-supply">
             <div className="flex items-center gap-2">
               <LuPlusCircle className="text-[18px]" />
               <span className="truncate">Create Supply</span>
             </div>
           </ActiveLink>
-        </p>
+        </div>
 
-        <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+        <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
           <ActiveLink to="/admin/supplies">
             <div className="flex items-center gap-2">
               <IoServerOutline className="text-[18px]" />
               <span className="truncate">All Supplies</span>
             </div>
           </ActiveLink>
-        </p>
+        </div>
 
-        <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+        <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
           <ActiveLink to="/admin/create-testimonial">
             <div className="flex items-center gap-2">
               <MdOutlineRateReview className="text-[18px]" />
               <span className="truncate">Make Review</span>
             </div>
           </ActiveLink>
-        </p>
+        </div>
 
-        <p className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+        <div className="font-semibold text-[14px] md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
           <ActiveLink to="/">
             <div className="flex items-center gap-2">
               <AiOutlineHome className="text-[18px]" />
               <span className="truncate">Home</span>
             </div>
           </ActiveLink>
-        </p>
+        </div>
       </nav>
     </aside>
   );

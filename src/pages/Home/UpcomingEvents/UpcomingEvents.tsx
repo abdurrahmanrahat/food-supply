@@ -21,7 +21,7 @@ const UpcomingEvents = () => {
 
       {/* cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <Link to="#" className="bg-[#F7F4ED]">
+        <Link to="#" className="bg-[#F7F4ED] rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
               src={Img1}
@@ -36,7 +36,7 @@ const UpcomingEvents = () => {
             </h4>
           </div>
         </Link>
-        <Link to="#" className="bg-[#F7F4ED]">
+        <Link to="#" className="bg-[#F7F4ED] rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
               src={Img2}
@@ -51,7 +51,7 @@ const UpcomingEvents = () => {
             </h4>
           </div>
         </Link>
-        <Link to="#" className="bg-[#F7F4ED]">
+        <Link to="#" className="bg-[#F7F4ED] rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
               src={Img3}

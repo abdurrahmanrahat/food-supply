@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useGetTestimonialsQuery } from "@/redux/features/testimonial/testimonial.api";
 import { FaQuoteLeft } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,13 +16,16 @@ type TTestimonial = {
 };
 
 const Testimonials = () => {
-  const [reviews, setReviews] = useState<TTestimonial[]>([]);
+  // const [reviews, setReviews] = useState<TTestimonial[]>([]);
 
-  useEffect(() => {
-    fetch("reviews.json")
-      .then((res) => res.json())
-      .then((data) => setReviews(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("reviews.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setReviews(data));
+  // }, []);
+
+  const { data: reviews } = useGetTestimonialsQuery({});
+  console.log(reviews);
 
   return (
     <Container className="mb-16 mt-12 md:mb-24">
@@ -63,7 +66,7 @@ const Testimonials = () => {
         }}
       >
         {/* map section start */}
-        {reviews?.map((data) => (
+        {reviews?.data.map((data: TTestimonial) => (
           <SwiperSlide key={data._id}>
             <div className="group group/item mt-10 bg-[#F7F4ED] lg:px-12 mx-3 rounded-md">
               <div className="flex items-center justify-center mb-5 pt-6">
