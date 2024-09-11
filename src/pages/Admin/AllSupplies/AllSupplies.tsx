@@ -73,7 +73,7 @@ const AllSupplies = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {supplies?.data?.map((item: TSupply) => (
+          {supplies?.data.data?.map((item: TSupply) => (
             <TableRow key={item._id}>
               <TableCell className="text-lg">{item.supplyTitle}</TableCell>
               <TableCell>

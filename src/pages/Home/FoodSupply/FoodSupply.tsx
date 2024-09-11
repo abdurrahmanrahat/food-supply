@@ -28,7 +28,7 @@ const FoodSupply = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3  gap-12 mt-12">
-        {supplies.data?.slice(0, 6).map((supply: TSupply) => (
+        {supplies?.data.data?.slice(0, 6).map((supply: TSupply) => (
           <div key={supply._id} className="shadow-cardShadow">
             <img src={supply.supplyImg} className="" alt="" />
             <div className="p-6">

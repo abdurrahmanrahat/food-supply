@@ -4,7 +4,7 @@ const foodSupplyApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getSupply: builder.query({
       query: (args: Record<string, any>) => {
-        // console.log(args);
+        console.log(args);
         return {
           url: "/supplies",
           method: "GET",
