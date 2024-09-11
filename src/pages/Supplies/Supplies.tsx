@@ -26,7 +26,31 @@ const Supplies = () => {
         </div>
 
         {/* search */}
-        <div>search</div>
+        <div>
+          <div className="w-full mx-auto">
+            <div className="grid grid-cols-12 gap-2 md:gap-4">
+              <div className="relative w-full h-[50px] col-span-8">
+                <input
+                  type="search"
+                  className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
+                  placeholder="Search..."
+                />
+              </div>
+
+              <div className="col-span-4">
+                <select className="w-full h-[50px] px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]">
+                  <option disabled>All Categories</option>
+                  <option value="food">Food</option>
+                  <option value="fish">Fish</option>
+                  <option value="paper products">Paper Products</option>
+                  <option value="vegetable">Vegetable</option>
+                  <option value="meat">Meat</option>
+                  <option value="dairy products">Dairy Products</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16 pb-8">

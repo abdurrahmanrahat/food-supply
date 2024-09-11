@@ -23,7 +23,7 @@ const UpcomingEvents = () => {
       </div>
 
       {/* cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 2xl:gap-14 mt-12">
         <Link to="#" className="shadow-cardLightShadow rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
