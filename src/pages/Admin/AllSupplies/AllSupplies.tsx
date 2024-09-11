@@ -13,6 +13,9 @@ import {
   useGetSupplyQuery,
   useRemoveSupplyMutation,
 } from "@/redux/features/foodSupply/foodSupplyApi";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { Button, IconButton } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
 import { LuTrash2 } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -29,11 +32,64 @@ export type TSupply = {
 const AllSupplies = () => {
   const [deleteSupply] = useRemoveSupplyMutation();
 
-  const { data: supplies, isLoading } = useGetSupplyQuery({});
+  const query: Record<string, any> = {};
+  /***************************
+    PAGINATION FUNCTION
+   ****************************/
+
+  const [active, setActive] = useState(1);
+  const [totalDocument, setTotalDocument] = useState(0);
+  const paginationLimit = 9;
+
+  const totalPages = Math.ceil(totalDocument / paginationLimit);
+
+  const getItemProps = (index: number) =>
+    ({
+      variant: active === index ? "filled" : "text",
+      color: "gray",
+      onClick: () => setActive(index),
+    } as any);
+
+  const next = () => {
+    if (active === totalPages) return;
+
+    setActive(active + 1);
+  };
+
+  const prev = () => {
+    if (active === 1) return;
+
+    setActive(active - 1);
+  };
+
+  if (active) {
+    query["page"] = active;
+    query["limit"] = paginationLimit;
+  }
+
+  const { data: supplies, isLoading } = useGetSupplyQuery({
+    ...query,
+  });
+
+  useEffect(() => {
+    if (supplies?.data) {
+      setTotalDocument(supplies.data.documentCount);
+    }
+  }, [supplies]);
+
+  console.log(supplies);
 
   if (isLoading) {
     return <Loading />;
   }
+
+  const renderPageNumbers = () => {
+    return Array.from({ length: totalPages }, (_, index) => (
+      <IconButton {...getItemProps(index + 1)} key={index + 1}>
+        {index + 1}
+      </IconButton>
+    ));
+  };
 
   // delete supply
   const handleDeleteSupply = async (id: string | undefined) => {
@@ -104,6 +160,31 @@ const AllSupplies = () => {
           ))}
         </TableBody>
       </Table>
+
+      <div className="flex items-center justify-center md:justify-end gap-1 md:gap-4 mt-8">
+        <Button
+          variant="text"
+          className="flex items-center gap-2"
+          onClick={prev}
+          disabled={active === 1}
+          placeholder=""
+        >
+          <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" /> Previous
+        </Button>
+        <div className="flex items-center gap-1 md:gap-2">
+          {renderPageNumbers()}
+        </div>
+        <Button
+          variant="text"
+          className="flex items-center gap-2"
+          onClick={next}
+          disabled={active === totalPages}
+          placeholder=""
+        >
+          Next
+          <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
+        </Button>
+      </div>
     </Container>
   );
 };
