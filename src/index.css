@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
 @layer base {
   :root {
@@ -118,4 +124,20 @@
 .dark {
   background-color: black;
   color: white;
+}
+
+/* go to top */
+
+.top_btn_animation {
+  animation: goTop 1.4s linear infinite alternate-reverse;
+}
+
+@keyframes goTop {
+  0% {
+    transform: translateY(-0.1rem);
+  }
+
+  100% {
+    transform: translateY(0.1rem);
+  }
 }

@@ -30,20 +30,25 @@ const AboutUs = () => {
       {/* volunteers */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16 justify-between pb-8">
         {volunteers?.data.map((item: TVolunteer) => (
-          <div key={item._id} className="max-w-sm rounded-lg overflow-hidden">
+          <div
+            key={item._id}
+            className="max-w-sm rounded-lg overflow-hidden shadow-cardShadow"
+          >
             <div className="">
-              <img
-                className="w-full h-60 object-cover"
-                src={item.image}
-                alt={item.name}
-              />
+              <div className="">
+                <img
+                  className="w-full h-60 object-cover"
+                  src={item.image}
+                  alt={item.name}
+                />
+              </div>
               <div className="flex justify-center -mt-6">
                 <h4 className="bg-[#D9A868] px-4 py-2 rounded-md text-white font-bold domine-font md:text-[18px] cursor-pointer">
                   {item.profession}
                 </h4>
               </div>
             </div>
-            <div className="flex flex-col gap-4 text-center mt-4">
+            <div className="flex flex-col gap-4 text-center my-6">
               <div className="">
                 <h2 className="text-2xl font-semibold">{item.name}</h2>
               </div>

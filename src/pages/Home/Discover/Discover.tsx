@@ -28,7 +28,7 @@ const Discover = () => {
             distribution strategies.
           </p>
           <div className="pt-4">
-            <button className="font-medium hover:border-b-[1.5px] border-[#D9A868] transition-all">
+            <button className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700">
               Learn More
             </button>
           </div>

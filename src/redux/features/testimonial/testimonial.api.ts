@@ -12,7 +12,7 @@ const testimonialApi = baseApi.injectEndpoints({
 
     addTestimonial: builder.mutation({
       query: (data) => ({
-        url: "/testimonials",
+        url: "/testimonials/create-testimonial",
         method: "POST",
         body: data,
       }),

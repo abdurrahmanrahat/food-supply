@@ -10,13 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "@material-tailwind/react": "^2.1.10",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@reduxjs/toolkit": "^2.2.1",
     "antd": "^5.14.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "framer-motion": "^11.0.5",
+    "framer-motion": "^11.0.25",
     "jwt-decode": "^4.0.0",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.331.0",

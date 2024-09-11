@@ -42,7 +42,7 @@ const GratitudeModal = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="px-[16px] md:px-[20px] py-[6px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700">
+        <button className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700">
           Say Something
         </button>
       </DialogTrigger>
@@ -96,7 +96,7 @@ const GratitudeModal = () => {
           <div className="flex items-center justify-center">
             <DialogClose asChild>
               <input
-                className="px-[16px] md:px-[20px] py-[6px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700"
+                className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700"
                 type="submit"
                 value="Confirm"
               />

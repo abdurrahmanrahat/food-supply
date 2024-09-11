@@ -3,10 +3,14 @@ import { baseApi } from "@/redux/api/baseApi";
 const foodSupplyApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getSupply: builder.query({
-      query: () => ({
-        url: "/supplies",
-        method: "GET",
-      }),
+      query: (args: Record<string, any>) => {
+        console.log(args);
+        return {
+          url: "/supplies",
+          method: "GET",
+          params: args,
+        };
+      },
       providesTags: ["supply"],
     }),
     getSingleSupply: builder.query({
@@ -18,7 +22,7 @@ const foodSupplyApi = baseApi.injectEndpoints({
     }),
     addSupply: builder.mutation({
       query: (newSupply) => ({
-        url: "/supplies",
+        url: "/supplies/create-supply",
         method: "POST",
         body: newSupply,
       }),
@@ -26,7 +30,6 @@ const foodSupplyApi = baseApi.injectEndpoints({
     }),
     updateSupply: builder.mutation({
       query: (payload) => {
-        console.log("from payload api", payload);
         return {
           url: `/supplies/${payload.id}`,
           method: "PATCH",

@@ -31,7 +31,7 @@ const Banner = () => {
         {/* one */}
         <SwiperSlide className="relative">
           <img
-            className="lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
+            className="h-[300px] lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
             src="https://i.ibb.co/vLFvTqH/3.jpg"
           />
 
@@ -50,7 +50,7 @@ const Banner = () => {
         {/* two */}
         <SwiperSlide className="relative">
           <img
-            className="lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
+            className="h-[300px] lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
             src="https://i.ibb.co/bgdVbvr/4.jpg"
           />
 
@@ -69,7 +69,7 @@ const Banner = () => {
         {/* three */}
         <SwiperSlide className="relative">
           <img
-            className="lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
+            className=" h-[300px] lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
             src="https://i.ibb.co/4FmpQhy/1.jpg"
           />
 
@@ -88,7 +88,7 @@ const Banner = () => {
         {/* four */}
         <SwiperSlide className="relative">
           <img
-            className="lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
+            className="h-[300px] lg:h-[600px] xl:h-[640px] 2xl:h-[900px] object-cover w-screen"
             src="https://i.ibb.co/VV4jmHr/2.jpg"
           />
 

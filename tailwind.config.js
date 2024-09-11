@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import withMT from '@material-tailwind/react/utils/withMT';
+
+module.exports = withMT({
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -72,6 +74,11 @@ module.exports = {
           to: { height: "0" },
         },
       },
+      boxShadow: {
+        cardShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+        cardLightShadow: "rgba(100, 100, 111, 0.1) 0px 7px 29px 0px",
+        topUpShadow: "0 5px 20px rgba(0, 0, 0, .2)"
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -79,4 +86,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+})

@@ -30,9 +30,9 @@ const Community = () => {
         {gratitudes?.data.map((item: TGratitude) => (
           <div
             key={item._id}
-            className="shadow-lg p-4 md:p-8 rounded-md border-l-4 border-[#D9A868]"
+            className="shadow-cardShadow p-4 md:p-8 rounded-md border-l-4 border-[#D9A868]"
           >
-            <p className="text-dark-light domine-font text-[14px]">
+            <p className="text-dark-light domine-font text-[14px] text-justify">
               {item.comment}
             </p>
             <h4 className="satisfy-regular mt-2 text-end">{item.userName}</h4>

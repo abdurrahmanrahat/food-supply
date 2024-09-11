@@ -4,7 +4,7 @@ import { useGetSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
 import { Link } from "react-router-dom";
 
 const FoodSupply = () => {
-  const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
+  const { data: supplies, isLoading } = useGetSupplyQuery({});
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -17,34 +17,43 @@ const FoodSupply = () => {
           Food Supplies
         </h2>
 
-        <p className="text-dark-light max-w-[65ch] pb-2 text-center">
+        <p className="text-dark-light max-w-[66ch] pb-2 text-center">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus id
-          nibh ornare viverra. Ut posuere felis arcu tellus tempus in in
-          ultricies. Gravida tempus id nibh ornare viverra.
+          nibh ornare viverra.{" "}
+          <span className="hidden md:inline">
+            Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus
+            id nibh ornare viverra.
+          </span>
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
-        {supplies.data?.slice(0, 6).map((supply: TSupply) => (
-          <div key={supply._id} className="relative">
-            <img src={supply.supplyImg} className="rounded-sm" alt="" />
-            <h4 className="font-medium text-[20px] mt-2">
-              {supply.supplyTitle}
-            </h4>
-            <p className="capitalize">
-              <span className="font-medium">Category:</span>{" "}
-              {supply.supplyCategory}
-            </p>
-            <p>
-              <span className="font-medium">Quantity:</span>{" "}
-              {supply.supplyQuantity}
-            </p>
-            <div className="absolute bottom-0 right-8">
-              <Link to={`/supplies/${supply._id}`}>
-                <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-semibold cursor-pointer rounded-md">
-                  Details
-                </button>
-              </Link>
+      <div className="grid grid-cols-1 md:grid-cols-3  gap-12 mt-12">
+        {supplies?.data.data?.slice(0, 6).map((supply: TSupply) => (
+          <div key={supply._id} className="shadow-cardShadow">
+            <img src={supply.supplyImg} className="" alt="" />
+            <div className="p-6">
+              <h4 className="font-medium text-[20px] mb-[10px]">
+                {supply.supplyTitle}
+              </h4>
+
+              <div className="flex justify-between items-end">
+                <div>
+                  <p className="capitalize">
+                    <span className="font-medium">Category:</span>{" "}
+                    {supply.supplyCategory}
+                  </p>
+                  <p>
+                    <span className="font-medium">Quantity:</span>{" "}
+                    {supply.supplyQuantity}
+                  </p>
+                </div>
+
+                <Link to={`/supplies/${supply._id}`}>
+                  <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-semibold cursor-pointer rounded-md">
+                    Details
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         ))}
@@ -52,7 +61,7 @@ const FoodSupply = () => {
 
       <div className="mt-20 flex justify-center items-center">
         <Link to="/supplies">
-          <button className="px-[20px] md:px-[32px] py-[8px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700">
+          <button className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700">
             View All
           </button>
         </Link>

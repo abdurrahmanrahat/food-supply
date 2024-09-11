@@ -22,8 +22,11 @@ const Gallery = () => {
 
           <p className="text-dark-light max-w-[65ch] pb-2 text-center">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus
-            id nibh ornare viverra. Ut posuere felis arcu tellus tempus in in
-            ultricies. Gravida tempus id nibh ornare viverra.
+            id nibh ornare viverra.{" "}
+            <span className="hidden md:inline">
+              Ut posuere felis arcu tellus tempus in in ultricies. Gravida
+              tempus id nibh ornare viverra.
+            </span>
           </p>
         </div>
 
