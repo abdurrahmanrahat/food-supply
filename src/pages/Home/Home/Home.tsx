@@ -1,5 +1,6 @@
 import AboutUsTop from "@/components/slice/AboutUsTop";
 import Container from "@/components/ui/Container";
+import GoToTop from "@/components/ui/GoToTop";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
 import Discover from "../Discover/Discover";
@@ -33,6 +34,8 @@ const Home = () => {
       <About />
 
       <DistriHub />
+
+      <GoToTop />
     </div>
   );
 };
