@@ -12,10 +12,10 @@ const UpcomingEvents = () => {
           Upcoming Events
         </h2>
 
-        <p className="text-[14px] md:text-[15px] text-dark-light max-w-[80ch] pb-2 text-center">
+        <p className="text-[14px] md:text-[15px] text-dark-light max-w-[76ch] pb-2 text-center">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus id
           nibh ornare viverra.{" "}
-          <span className="hidden md:block">
+          <span className="hidden md:inline">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam
             deserunt minus accusamus.
           </span>
@@ -24,7 +24,7 @@ const UpcomingEvents = () => {
 
       {/* cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-        <Link to="#" className="bg-[#F7F4ED] rounded-t-3xl">
+        <Link to="#" className="shadow-cardLightShadow rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
               src={Img1}
@@ -39,7 +39,7 @@ const UpcomingEvents = () => {
             </h4>
           </div>
         </Link>
-        <Link to="#" className="bg-[#F7F4ED] rounded-t-3xl">
+        <Link to="#" className="shadow-cardLightShadow rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
               src={Img2}
@@ -54,7 +54,7 @@ const UpcomingEvents = () => {
             </h4>
           </div>
         </Link>
-        <Link to="#" className="bg-[#F7F4ED] rounded-t-3xl">
+        <Link to="#" className="shadow-cardLightShadow rounded-t-3xl">
           <div className="rounded-t-3xl overflow-hidden">
             <img
               src={Img3}

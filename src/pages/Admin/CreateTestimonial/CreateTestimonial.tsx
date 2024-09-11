@@ -50,7 +50,7 @@ const CreateTestimonial = () => {
   };
 
   return (
-    <div className="my-10">
+    <div className="h-screen flex flex-col justify-center items-center">
       <div className="text-center mb-14">
         <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95] domine-font">
           Create Testimonial
@@ -103,7 +103,7 @@ const CreateTestimonial = () => {
 
         <div className="flex items-center justify-center">
           <input
-            className="px-[20px] md:px-[32px] py-[8px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700"
+            className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700"
             type="submit"
             value="Make Review"
           />

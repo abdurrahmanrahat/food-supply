@@ -147,7 +147,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
           <div className="flex items-center justify-center">
             <DialogClose asChild>
               <input
-                className="px-[42px] py-[10px] bg-[#3D0066] text-white font-semibold cursor-pointer rounded-md"
+                className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700"
                 type="submit"
                 value="Edit Supply"
               />

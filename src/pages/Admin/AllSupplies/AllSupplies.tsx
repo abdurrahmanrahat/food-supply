@@ -46,14 +46,14 @@ const AllSupplies = () => {
   };
 
   return (
-    <Container className="my-10 border p-0 rounded-2xl">
+    <Container className="my-10 border py-10 rounded-2xl">
       <div className="text-center mb-14 relative">
         <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95] domine-font">
           Food Supplies
         </span>
         <div className="absolute right-0 top-[70px] md:top-5">
           <Link to="/admin/create-supply">
-            <button className="px-[16px] md:px-[20px] py-[6px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700">
+            <button className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700">
               Add Supply
             </button>
           </Link>
@@ -73,11 +73,9 @@ const AllSupplies = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {supplies.data?.map((item: TSupply) => (
+          {supplies?.data?.map((item: TSupply) => (
             <TableRow key={item._id}>
-              <TableCell className="font-medium text-lg">
-                {item.supplyTitle}
-              </TableCell>
+              <TableCell className="text-lg">{item.supplyTitle}</TableCell>
               <TableCell>
                 <img
                   src={item.supplyImg}

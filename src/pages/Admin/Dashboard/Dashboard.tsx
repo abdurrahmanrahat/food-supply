@@ -19,7 +19,7 @@ const Dashboard = () => {
 
       {/* statistics */}
       <div className="">
-        <h2 className="font-bold text-[20px]">Today Donations Summery</h2>
+        <h2 className="font-bold text-[20px]">Today Website Summery</h2>
         <div className="md:flex justify-between gap-6">
           {/* Jobs summery start     */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 rounded-lg mt-5">

@@ -8,14 +8,12 @@ type TActiveLinkProps = {
 
 const ActiveLink = ({ to, children }: TActiveLinkProps) => {
   return (
-    <div>
-      <NavLink
-        to={to}
-        className={({ isActive }) => (isActive ? "text-[#CB8830]" : "")}
-      >
-        {children}
-      </NavLink>
-    </div>
+    <NavLink
+      to={to}
+      className={({ isActive }) => (isActive ? "text-[#CB8830]" : "")}
+    >
+      {children}
+    </NavLink>
   );
 };
 

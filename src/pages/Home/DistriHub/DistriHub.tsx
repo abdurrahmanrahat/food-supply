@@ -18,7 +18,7 @@ const DistriHub = () => {
             Ut enim ad minim veniam
           </p>
           <Link to="/about-us">
-            <button className="px-[20px] md:px-[32px] py-[8px] font-semibold cursor-pointer rounded-md text-white border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700">
+            <button className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-white duration-700">
               More About
             </button>
           </Link>

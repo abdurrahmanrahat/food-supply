@@ -82,12 +82,17 @@ const CreateSupply = () => {
 
           {/* category */}
           <div>
-            <input
-              type="text"
-              placeholder="Supply category"
+            <select
               {...register("supplyCategory", { required: true })}
               className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
-            />
+            >
+              <option value="food">Food</option>
+              <option value="fish">Fish</option>
+              <option value="paper products">Paper Products</option>
+              <option value="vegetable">Vegetable</option>
+              <option value="meat">Meat</option>
+              <option value="dairy products">Dairy Products</option>
+            </select>
           </div>
 
           {/* Quantity */}
@@ -114,7 +119,7 @@ const CreateSupply = () => {
 
         <div className="flex items-center justify-center">
           <input
-            className="px-[20px] md:px-[32px] py-[8px] font-semibold cursor-pointer rounded-md border border-[#DABC95] hover:bg-[#F2D1A5]  duration-700"
+            className="px-[20px] md:px-[28px] py-[8px] font-medium cursor-pointer rounded-md border border-[#DABC95] bg-[#DABC95] hover:bg-transparent text-white hover:text-black duration-700"
             type="submit"
             value="Add Supply"
           />

@@ -13,10 +13,20 @@ const Supplies = () => {
 
   return (
     <Container className="my-16 md:my-16">
-      <div className="text-center mb-14 relative">
-        <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95] domine-font">
-          All Food Supplies
-        </span>
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-12">
+        <div className="flex flex-col justify-center items-center md:items-start">
+          <h2 className="text-[28px] md:text-[32px] font-bold domine-font">
+            All Food Supplies
+          </h2>
+
+          <p className="text-dark-light text-center md:text-start max-w-[46ch]">
+            Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus
+            id nibh ornare viverra.
+          </p>
+        </div>
+
+        {/* search */}
+        <div>search</div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16 pb-8">
