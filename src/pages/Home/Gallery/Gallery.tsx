@@ -1,5 +1,5 @@
 import Container from "@/components/ui/Container";
-import useScrollGrow from "@/lib/hooks/ScrollGrowHook";
+import useScrollGrow from "@/hooks/ScrollGrowHook";
 import { motion } from "framer-motion";
 import Img1 from "../../../assets/images/gallery/1.jpg";
 import Img2 from "../../../assets/images/gallery/2.jpg";
@@ -22,8 +22,11 @@ const Gallery = () => {
 
           <p className="text-dark-light max-w-[65ch] pb-2 text-center">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus
-            id nibh ornare viverra. Ut posuere felis arcu tellus tempus in in
-            ultricies. Gravida tempus id nibh ornare viverra.
+            id nibh ornare viverra.{" "}
+            <span className="hidden md:block">
+              Ut posuere felis arcu tellus tempus in in ultricies. Gravida
+              tempus id nibh ornare viverra.
+            </span>
           </p>
         </div>
 

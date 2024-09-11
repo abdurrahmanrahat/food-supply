@@ -14,8 +14,11 @@ const UpcomingEvents = () => {
 
         <p className="text-[14px] md:text-[15px] text-dark-light max-w-[80ch] pb-2 text-center">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida tempus id
-          nibh ornare viverra. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Iste nam deserunt minus accusamus.
+          nibh ornare viverra.{" "}
+          <span className="hidden md:block">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nam
+            deserunt minus accusamus.
+          </span>
         </p>
       </div>
 

@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <div className="bg-black text-white pt-8">
       <Container className="py-8 lg:py-10 2xl:py-12">
-        <div className="md:flex mt-4">
+        <div className="md:flex text-center md:text-start mt-4">
           {/* About company */}
           <div className="md:w-[40%] mb-4">
             <Link to="/">
@@ -27,7 +27,7 @@ const Footer = () => {
               blanditiis praesentium voluptatum deleniti atque corrupti.
             </p>
 
-            <div className="mt-4 flex gap-4">
+            <div className="mt-4 flex justify-center md:justify-start gap-4">
               <a
                 className="text-xl md:text-[22px] hover:text-secondary-text transition-all duration-500"
                 href="#"
@@ -68,7 +68,7 @@ const Footer = () => {
                 placeholder="Search"
               />
             </div>
-            <div>
+            <div className="flex flex-col items-center md:items-start">
               <p className="flex gap-2 items-center">
                 <FaLocationArrow className="inline" />
                 <span>Warsaw, 00-967, Poland</span>

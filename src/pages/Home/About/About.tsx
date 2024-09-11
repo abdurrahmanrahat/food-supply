@@ -1,5 +1,5 @@
 import Container from "@/components/ui/Container";
-import useScrollX from "@/lib/hooks/scrollXAnimateHook";
+import useScrollX from "@/hooks/scrollXAnimateHook";
 import { motion } from "framer-motion";
 import Img from "../../../assets/images/about.jpg";
 
@@ -19,13 +19,13 @@ const About = () => {
       <motion.div
         style={styleRight}
         ref={componentRef}
-        className="md:w-1/2 flex flex-col justify-center"
+        className="md:w-1/2 flex flex-col justify-center items-center md:items-start"
       >
         <h4 className="text-[#D9A868] text-[30px] satisfy-regular">Discover</h4>
         <h2 className="text-[40px] md:text-[44px] font-bold domine-font">
           WHAT WE ARE?
         </h2>
-        <p className="text-dark-light max-w-[60ch] pt-4">
+        <p className="text-dark-light max-w-[60ch] pt-4 text-justify">
           Ultrices vitae auctor eu augue. Pellentesque dignissim eni amet
           venenatis Vulputate enim nulla aliquet porttitor la. Dictumst quisque
           sagittis purus sit a. Praesent elementum facil fringilla est. Volutpat
