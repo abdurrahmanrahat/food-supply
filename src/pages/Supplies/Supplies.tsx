@@ -1,11 +1,20 @@
 import Container from "@/components/ui/Container";
 import Loading from "@/components/ui/Loading";
 import { useGetSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { TSupply } from "../Admin/AllSupplies/AllSupplies";
 
 const Supplies = () => {
-  const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
+  // const query: Record<string, any> = {};
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const { data: supplies, isLoading } = useGetSupplyQuery({ searchTerm });
+
+  // const debouncedTerm = useDebounced({ searchQuery: searchTerm, delay: 600 });
+  // if (debouncedTerm) {
+  //   query["searchTerm"] = searchTerm;
+  // }
 
   if (isLoading) {
     return <Loading />;
@@ -33,13 +42,19 @@ const Supplies = () => {
                 <input
                   type="search"
                   className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
-                  placeholder="Search..."
+                  placeholder="Search supply ..."
+                  onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
 
               <div className="col-span-4">
-                <select className="w-full h-[50px] px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]">
-                  <option disabled>All Categories</option>
+                <select
+                  className="w-full h-[50px] px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    All Categories
+                  </option>
                   <option value="food">Food</option>
                   <option value="fish">Fish</option>
                   <option value="paper products">Paper Products</option>
@@ -53,37 +68,43 @@ const Supplies = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16 pb-8">
-        {supplies.data?.map((supply: TSupply) => (
-          <div key={supply._id} className="shadow-cardShadow">
-            <img src={supply.supplyImg} className="" alt="" />
-            <div className="p-6">
-              <h4 className="font-medium text-[20px] mb-[10px]">
-                {supply.supplyTitle}
-              </h4>
+      {supplies.data.length === 0 ? (
+        <div className="py-20 flex justify-center items-center">
+          <h2 className="text-[24px] font-semibold">No Data Found!!</h2>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 my-16 pb-8">
+          {supplies.data?.map((supply: TSupply) => (
+            <div key={supply._id} className="shadow-cardShadow">
+              <img src={supply.supplyImg} className="" alt="" />
+              <div className="p-6">
+                <h4 className="font-medium text-[20px] mb-[10px]">
+                  {supply.supplyTitle}
+                </h4>
 
-              <div className="flex justify-between items-end">
-                <div>
-                  <p className="capitalize">
-                    <span className="font-medium">Category:</span>{" "}
-                    {supply.supplyCategory}
-                  </p>
-                  <p>
-                    <span className="font-medium">Quantity:</span>{" "}
-                    {supply.supplyQuantity}
-                  </p>
+                <div className="flex justify-between items-end">
+                  <div>
+                    <p className="capitalize">
+                      <span className="font-medium">Category:</span>{" "}
+                      {supply.supplyCategory}
+                    </p>
+                    <p>
+                      <span className="font-medium">Quantity:</span>{" "}
+                      {supply.supplyQuantity}
+                    </p>
+                  </div>
+
+                  <Link to={`/supplies/${supply._id}`}>
+                    <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-semibold cursor-pointer rounded-md">
+                      Details
+                    </button>
+                  </Link>
                 </div>
-
-                <Link to={`/supplies/${supply._id}`}>
-                  <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-semibold cursor-pointer rounded-md">
-                    Details
-                  </button>
-                </Link>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </Container>
   );
 };

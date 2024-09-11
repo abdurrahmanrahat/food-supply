@@ -3,10 +3,14 @@ import { baseApi } from "@/redux/api/baseApi";
 const foodSupplyApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getSupply: builder.query({
-      query: () => ({
-        url: "/supplies",
-        method: "GET",
-      }),
+      query: (args: Record<string, any>) => {
+        // console.log(args);
+        return {
+          url: "/supplies",
+          method: "GET",
+          params: args,
+        };
+      },
       providesTags: ["supply"],
     }),
     getSingleSupply: builder.query({

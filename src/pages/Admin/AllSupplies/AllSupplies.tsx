@@ -29,7 +29,7 @@ export type TSupply = {
 const AllSupplies = () => {
   const [deleteSupply] = useRemoveSupplyMutation();
 
-  const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
+  const { data: supplies, isLoading } = useGetSupplyQuery({});
 
   if (isLoading) {
     return <Loading />;

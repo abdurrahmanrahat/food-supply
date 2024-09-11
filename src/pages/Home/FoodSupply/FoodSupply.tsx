@@ -4,7 +4,7 @@ import { useGetSupplyQuery } from "@/redux/features/foodSupply/foodSupplyApi";
 import { Link } from "react-router-dom";
 
 const FoodSupply = () => {
-  const { data: supplies, isLoading } = useGetSupplyQuery(undefined);
+  const { data: supplies, isLoading } = useGetSupplyQuery({});
 
   if (isLoading) {
     return <h2>Loading...</h2>;
