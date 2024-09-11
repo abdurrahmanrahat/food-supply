@@ -8,8 +8,21 @@ import { TSupply } from "../Admin/AllSupplies/AllSupplies";
 const Supplies = () => {
   // const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [supplyCategory, setSupplyCategory] = useState<string>("");
 
-  const { data: supplies, isLoading } = useGetSupplyQuery({ searchTerm });
+  const query: Record<string, any> = {};
+
+  if (searchTerm) {
+    query["searchTerm"] = searchTerm;
+  }
+
+  if (supplyCategory) {
+    query["supplyCategory"] = supplyCategory;
+  }
+
+  const { data: supplies, isLoading } = useGetSupplyQuery({
+    ...query,
+  });
 
   // const debouncedTerm = useDebounced({ searchQuery: searchTerm, delay: 600 });
   // if (debouncedTerm) {
@@ -51,10 +64,11 @@ const Supplies = () => {
                 <select
                   className="w-full h-[50px] px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
                   defaultValue=""
+                  onChange={(e) => {
+                    setSupplyCategory(e.target.value);
+                  }}
                 >
-                  <option value="" disabled>
-                    All Categories
-                  </option>
+                  <option value="">All Categories</option>
                   <option value="food">Food</option>
                   <option value="fish">Fish</option>
                   <option value="paper products">Paper Products</option>
