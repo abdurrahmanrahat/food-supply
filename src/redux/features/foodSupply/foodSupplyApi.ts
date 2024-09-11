@@ -18,7 +18,7 @@ const foodSupplyApi = baseApi.injectEndpoints({
     }),
     addSupply: builder.mutation({
       query: (newSupply) => ({
-        url: "/supplies",
+        url: "/supplies/create-supply",
         method: "POST",
         body: newSupply,
       }),
@@ -26,7 +26,6 @@ const foodSupplyApi = baseApi.injectEndpoints({
     }),
     updateSupply: builder.mutation({
       query: (payload) => {
-        console.log("from payload api", payload);
         return {
           url: `/supplies/${payload.id}`,
           method: "PATCH",

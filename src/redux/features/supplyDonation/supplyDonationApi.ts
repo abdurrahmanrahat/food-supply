@@ -12,7 +12,7 @@ const supplyDonationApi = baseApi.injectEndpoints({
 
     addSupplyDonation: builder.mutation({
       query: (newDonation) => ({
-        url: "/donations",
+        url: "/donations/create-donation",
         method: "POST",
         body: newDonation,
       }),

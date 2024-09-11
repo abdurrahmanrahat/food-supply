@@ -42,40 +42,42 @@ const Navbar = () => {
           </Link>
 
           {/* desktop nav links */}
-          <ul className="space-x-6 hidden lg:flex text-[#D5E7F3]">
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+          <ul className="space-x-6 hidden lg:flex items-center text-[#D5E7F3]">
+            <li className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/">Home</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/supplies">All Supplies</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/about-us">About Us</ActiveLink>
             </li>
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/community">Community</ActiveLink>
             </li>
 
             <DropDownMenu />
 
-            <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
+            <li className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
               <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
+            </li>
+            <li onClick={() => setToggle((prev) => !prev)}>
+              <ThemeToggle />
             </li>
             {user ? (
               <button
                 onClick={handleLogout}
-                className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                className="px-[20px] md:px-[24px] text-[15px] py-[6px] bg-secondary-text opacity-80 hover:bg-white duration-500 text-white hover:text-black font-medium cursor-pointer rounded-md"
               >
                 Logout
               </button>
             ) : (
-              <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-                <ActiveLink to="/login">Login</ActiveLink>
-              </li>
+              <Link to="/login">
+                <button className="px-[20px] md:px-[24px] text-[15px] py-[6px] bg-secondary-text opacity-80 hover:bg-white duration-500 text-white hover:text-black font-medium cursor-pointer rounded-md">
+                  Login
+                </button>
+              </Link>
             )}
-            <li>
-              <ThemeToggle />
-            </li>
           </ul>
 
           {/* mobile menu */}
@@ -114,25 +116,25 @@ const Navbar = () => {
                   <ul className="space-y-4">
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                      className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/">Home</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                      className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/supplies">All Supplies</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                      className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/about-us">About Us</ActiveLink>
                     </li>
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                      className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/community">Community</ActiveLink>
                     </li>
@@ -141,25 +143,27 @@ const Navbar = () => {
 
                     <li
                       onClick={() => setToggle((prev) => !prev)}
-                      className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                      className="font-medium md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
                     >
                       <ActiveLink to="/admin/dashboard">Dashboard</ActiveLink>
+                    </li>
+                    <li onClick={() => setToggle((prev) => !prev)}>
+                      <ThemeToggle />
                     </li>
                     {user ? (
                       <button
                         onClick={handleLogout}
-                        className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500"
+                        className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-medium cursor-pointer rounded-md"
                       >
                         Logout
                       </button>
                     ) : (
-                      <li className="font-semibold md:text-[17px] 2xl:text-[18px] hover:text-secondary-text transition-all duration-500">
-                        <ActiveLink to="/login">Login</ActiveLink>
-                      </li>
+                      <Link to="/login">
+                        <button className="px-[20px] md:px-[24px] py-[6px] bg-[#DABC95] hover:bg-[#F2D1A5] duration-500 text-white font-medium cursor-pointer rounded-md">
+                          Login
+                        </button>
+                      </Link>
                     )}
-                    <li onClick={() => setToggle((prev) => !prev)}>
-                      <ThemeToggle />
-                    </li>
                   </ul>
                 </div>
               </motion.div>

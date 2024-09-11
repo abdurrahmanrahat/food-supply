@@ -1,5 +1,5 @@
 import Container from "@/components/ui/Container";
-import useScrollX from "@/hooks/scrollXAnimateHook";
+import useScrollX from "@/lib/hooks/scrollXAnimateHook";
 import { motion } from "framer-motion";
 import Img from "../../../assets/images/about.jpg";
 

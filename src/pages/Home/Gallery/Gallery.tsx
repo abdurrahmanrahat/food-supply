@@ -1,5 +1,5 @@
 import Container from "@/components/ui/Container";
-import useScrollGrow from "@/hooks/ScrollGrowHook";
+import useScrollGrow from "@/lib/hooks/ScrollGrowHook";
 import { motion } from "framer-motion";
 import Img1 from "../../../assets/images/gallery/1.jpg";
 import Img2 from "../../../assets/images/gallery/2.jpg";

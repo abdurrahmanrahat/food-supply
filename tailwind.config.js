@@ -72,6 +72,9 @@ module.exports = {
           to: { height: "0" },
         },
       },
+      boxShadow: {
+        cardShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

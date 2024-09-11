@@ -13,7 +13,7 @@ import Container from "../ui/Container";
 const Footer = () => {
   return (
     <div className="bg-black text-white pt-8">
-      <Container className="py-6">
+      <Container className="py-8 lg:py-10 2xl:py-12">
         <div className="md:flex mt-4">
           {/* About company */}
           <div className="md:w-[40%] mb-4">

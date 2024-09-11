@@ -12,7 +12,7 @@ const testimonialApi = baseApi.injectEndpoints({
 
     addGratitude: builder.mutation({
       query: (data) => ({
-        url: "/gratitudes",
+        url: "/gratitudes/create-gratitude",
         method: "POST",
         body: data,
       }),
