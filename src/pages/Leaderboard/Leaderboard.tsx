@@ -22,29 +22,54 @@ const Leaderboard = () => {
     return <Loading />;
   }
 
+  const myDonations = [...suppliesDonations.data];
+
+  const sortData = myDonations.sort((a, b) => {
+    const quantityA = parseFloat(a.newSupplyQuantity.split(" ")[0]);
+    const quantityB = parseFloat(b.newSupplyQuantity.split(" ")[0]);
+
+    return quantityB - quantityA;
+  });
+
   return (
     <Container className="my-16">
-      <div className="text-center mb-14 relative">
-        <span className="text-[32px] md:text-[40px] font-bold border-b-[3px] border-b-[#DABC95] domine-font">
+      <div className="flex flex-col justify-center items-center md:items-start mb-16">
+        <h2 className="text-[28px] md:text-[32px] font-bold domine-font">
           Leaderboard
-        </span>
+        </h2>
+
+        <p className="text-dark-light text-center md:text-start ">
+          Donations list by the random people to help the disabilities people
+          are listed in the table with top rank.
+        </p>
       </div>
 
       {/* table list */}
       <div className="md:mx-[200px] pb-8">
         {/* head */}
-        <div className="grid grid-cols-12 bg-gray-400 py-2 px-4 font-medium text-[18px] md:text-[20px]">
-          <div className="col-span-4">Rank</div>
-          <div className="col-span-4">Name</div>
-          <div className="col-span-4 ">Donations</div>
+        <div className="grid grid-cols-12 bg-gray-400 py-2 px-4 font-medium text-[18px] md:text-[20px] overflow-auto">
+          <div className="col-span-2">Rank</div>
+          <div className="col-span-4">Donator Name</div>
+          <div className="col-span-3">Supply Product</div>
+          <div className="col-span-3 ">Donations</div>
         </div>
         {/* body */}
-        <div className="my-2">
-          {suppliesDonations?.data.map((item: TDonations, index: number) => (
-            <div className="md:text-[18px] grid grid-cols-12 pb-2 border-b border-gray-300 py-2 px-4">
-              <div className="col-span-4 font-medium">{index + 1}</div>
+        <div className="my-2 overflow-auto">
+          {sortData?.map((item: TDonations, index: number) => (
+            <div
+              className="md:text-[18px] grid grid-cols-12 items-center pb-2 border-b border-gray-300 py-2 px-4"
+              key={item._id}
+            >
+              <div className="col-span-2 font-medium">{index + 1}</div>
               <div className="col-span-4">{item.userName}</div>
-              <div className="col-span-4">{item.newSupplyQuantity}</div>
+              <div className="col-span-3">
+                <img
+                  src={item.supplyImg}
+                  className="w-20 rounded-full"
+                  alt=""
+                />
+              </div>
+              <div className="col-span-3">{item.newSupplyQuantity}</div>
             </div>
           ))}
         </div>

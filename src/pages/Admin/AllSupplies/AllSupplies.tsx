@@ -77,8 +77,6 @@ const AllSupplies = () => {
     }
   }, [supplies]);
 
-  console.log(supplies);
-
   if (isLoading) {
     return <Loading />;
   }

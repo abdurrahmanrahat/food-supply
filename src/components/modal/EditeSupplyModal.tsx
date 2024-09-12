@@ -1,5 +1,6 @@
 import { TSupply } from "@/pages/Admin/AllSupplies/AllSupplies";
 import { useUpdateSupplyMutation } from "@/redux/features/foodSupply/foodSupplyApi";
+import { useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { FaRegEdit } from "react-icons/fa";
 import { toast } from "sonner";
@@ -20,7 +21,17 @@ type TSupplyModalProps = {
   id: string;
 };
 
+type TDonations = {
+  supplyImg?: string;
+  supplyTitle?: string;
+  supplyCategory?: string;
+  supplyQuantity?: string;
+  supplyDesc?: string;
+};
+
 const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
+  const [updatedImage, setUpdatedImage] = useState();
+
   const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
   const [updateSupply] = useUpdateSupplyMutation();
@@ -31,41 +42,57 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
   const onSubmit = (data: FieldValues) => {
     const { supplyTitle, supplyCategory, supplyQuantity, supplyDesc } = data;
 
-    // img hosting to imgbb
-    const formData = new FormData();
-    formData.append("image", data.supplyImg[0]);
+    if (data.supplyImg[0]) {
+      // img hosting to imgbb
+      const formData = new FormData();
+      formData.append("image", data.supplyImg[0]);
 
-    fetch(img_hosting_url, {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => res.json())
-      .then(async (imgRes) => {
-        if (imgRes.success) {
-          const supplyImg = imgRes.data.display_url;
-          console.log(supplyImg);
-
-          //  new supply
-          const newData = {
-            supplyImg,
-            supplyTitle,
-            supplyCategory,
-            supplyQuantity,
-            supplyDesc,
-          };
-
-          const payload = { id, newData };
-
-          // Send new supply to database store
-          const res = await updateSupply(payload);
-          if (res) {
-            // reset();
-            toast.success("Supply updated successfully", {
-              duration: 2000,
-            });
+      fetch(img_hosting_url, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then(async (imgRes) => {
+          if (imgRes.success) {
+            const supplyImg = imgRes.data.display_url;
+            setUpdatedImage(supplyImg);
           }
-        }
-      });
+        });
+    }
+
+    //  new supply
+    const newData: TDonations = {};
+
+    if (updatedImage) {
+      newData["supplyImg"] = updatedImage;
+    }
+    if (supplyTitle) {
+      newData["supplyTitle"] = supplyTitle;
+    }
+    if (supplyCategory) {
+      newData["supplyCategory"] = supplyCategory;
+    }
+    if (supplyQuantity) {
+      newData["supplyQuantity"] = supplyQuantity;
+    }
+    if (supplyDesc) {
+      newData["supplyDesc"] = supplyDesc;
+    }
+
+    const payload = { id, newData };
+
+    // Send new supply to database store
+    const sendUpdateDataToDb = async () => {
+      const res = await updateSupply(payload);
+      if (res) {
+        // reset();
+        toast.success("Supply updated successfully", {
+          duration: 2000,
+        });
+      }
+    };
+
+    sendUpdateDataToDb();
   };
 
   return (
@@ -95,7 +122,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
                 type="text"
                 placeholder="Supply title"
                 defaultValue={item.supplyTitle}
-                {...register("supplyTitle", { required: true })}
+                {...register("supplyTitle", { required: false })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />
             </div>
@@ -104,7 +131,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
             <div>
               <input
                 type="file"
-                {...register("supplyImg", { required: true })}
+                {...register("supplyImg", { required: false })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />
             </div>
@@ -115,7 +142,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
                 type="text"
                 placeholder="Supply category"
                 defaultValue={item.supplyCategory}
-                {...register("supplyCategory", { required: true })}
+                {...register("supplyCategory", { required: false })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />
             </div>
@@ -126,7 +153,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
                 type="text"
                 placeholder="Supply quantity"
                 defaultValue={item.supplyQuantity}
-                {...register("supplyQuantity", { required: true })}
+                {...register("supplyQuantity", { required: false })}
                 className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
               />
             </div>
@@ -139,7 +166,7 @@ const EditeSupplyModal = ({ item, id }: TSupplyModalProps) => {
               rows={4 as number}
               placeholder="Description"
               defaultValue={item.supplyDesc}
-              {...register("supplyDesc", { required: true })}
+              {...register("supplyDesc", { required: false })}
               className="w-full px-3 py-3 focus:outline-none text-md border border-gray-200 bg-[#F2F2F2]"
             ></textarea>
           </div>
